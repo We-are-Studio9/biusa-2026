@@ -160,6 +160,8 @@
             <stop offset="80%" stop-color="#FF8200" stop-opacity="0.9" />
             <stop offset="100%" stop-color="#FF8200" stop-opacity="0" />
           </linearGradient>
+          <!-- gradient is fixed in SVG coordinate space: blue on the LEFT (Philadelphia x=540), orange on the RIGHT (Abidjan x=1080) -->
+
           <radialGradient id="cityGlow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stop-color="#FFE9B0" stop-opacity="1" />
             <stop offset="40%" stop-color="#FFE9B0" stop-opacity="0.4" />
@@ -186,10 +188,10 @@
           fill="url(#cityGlow)"
         />
 
-        <!-- The arc itself (Philadelphia → Abidjan) -->
+        <!-- The arc itself (Abidjan → Philadelphia, lands ON Philly) -->
         <path
           class="hero__arc-path"
-          d="M 540 180 Q 800 80 1080 500"
+          d="M 1080 500 Q 800 80 540 180"
           fill="none"
           stroke="url(#arcGrad)"
           stroke-width="2.4"
@@ -198,7 +200,7 @@
         />
         <path
           class="hero__arc-shimmer"
-          d="M 540 180 Q 800 80 1080 500"
+          d="M 1080 500 Q 800 80 540 180"
           fill="none"
           stroke="#fff"
           stroke-width="1.4"
