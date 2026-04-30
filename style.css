@@ -474,34 +474,24 @@ ul {
   }
 }
 
-.hero__bg-mobile {
-  display: none;
-}
-.hero__bg-mobile img {
+.hero__bg-img-mobile {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
-  /* override global lang-en display:none for bg images */
-  display: block !important;
-}
-/* hide the non-active lang img inside mobile bg */
-html[lang="en"] .hero__bg-mobile img.lang-fr {
-  display: none !important;
-}
-html:not([lang="en"]) .hero__bg-mobile img.lang-en {
-  display: none !important;
+  object-position: center center;
+  display: none;
+  animation: hero-ken-burns 32s ease-in-out infinite;
+  transform-origin: 50% 50%;
 }
 
 @media (max-width: 768px) {
-  /* Mobile uses the pure earth-bg too — no double branding overlay */
   .hero__bg-img {
-    object-position: 65% center;
+    display: none;
   }
-  .hero__bg-mobile {
-    display: none !important;
+  .hero__bg-img-mobile {
+    display: block;
   }
 }
 
