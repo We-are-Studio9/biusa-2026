@@ -474,24 +474,34 @@ ul {
   }
 }
 
-.hero__bg-img-mobile {
+.hero__bg-mobile {
+  display: none;
+}
+.hero__bg-mobile img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
-  display: none;
-  animation: hero-ken-burns 32s ease-in-out infinite;
-  transform-origin: 50% 50%;
+  object-position: center top;
+  /* override global lang-en display:none for bg images */
+  display: block !important;
+}
+/* hide the non-active lang img inside mobile bg */
+html[lang="en"] .hero__bg-mobile img.lang-fr {
+  display: none !important;
+}
+html:not([lang="en"]) .hero__bg-mobile img.lang-en {
+  display: none !important;
 }
 
 @media (max-width: 768px) {
+  /* Mobile uses the pure earth-bg too — no double branding overlay */
   .hero__bg-img {
-    display: none;
+    object-position: 65% center;
   }
-  .hero__bg-img-mobile {
-    display: block;
+  .hero__bg-mobile {
+    display: none !important;
   }
 }
 
