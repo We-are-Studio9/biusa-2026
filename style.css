@@ -294,20 +294,21 @@ ul {
 .nav {
   display: flex;
   align-items: center;
-  gap: 38px;
+  gap: 36px;
 }
 
 .nav__link {
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.005em;
-  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.82);
   position: relative;
   padding: 6px 0;
-  transition: color 0.25s var(--ease);
+  transition: color 0.3s var(--ease);
 }
 .nav__link:hover {
-  color: var(--gold-light);
+  color: #fff;
 }
 .nav__link::after {
   content: "";
@@ -319,7 +320,7 @@ ul {
   background: var(--gold-light);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.35s var(--ease);
+  transition: transform 0.4s var(--ease);
 }
 .nav__link:hover::after {
   transform: scaleX(1);
@@ -338,31 +339,35 @@ ul {
 .header__cta {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: var(--gold);
-  color: #fff;
-  padding: 13px 24px;
-  font-size: 13px;
+  background: transparent;
+  color: rgba(255, 220, 160, 0.95);
+  padding: 12px 24px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  border-radius: var(--r-md);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 220, 160, 0.42);
+  border-radius: 0;
   transition:
-    background 0.25s var(--ease),
+    background 0.3s var(--ease),
+    color 0.3s var(--ease),
+    border-color 0.3s var(--ease),
     transform 0.25s var(--ease),
     box-shadow 0.25s var(--ease);
 }
 .header__cta:hover {
-  background: var(--ink);
+  background: rgba(255, 220, 160, 0.95);
+  color: var(--ink);
+  border-color: rgba(255, 220, 160, 0.95);
+}
+.header.is-scrolled .header__cta {
+  color: var(--gold);
+  border-color: rgba(171, 135, 63, 0.5);
+}
+.header.is-scrolled .header__cta:hover {
+  background: var(--gold);
   color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-}
-.header__cta::after {
-  content: "→";
-  transition: transform 0.25s var(--ease);
-}
-.header__cta:hover::after {
-  transform: translateX(4px);
+  border-color: var(--gold);
 }
 
 .nav__toggle {
