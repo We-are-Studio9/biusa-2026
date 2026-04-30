@@ -538,25 +538,6 @@ html:not([lang="en"]) .hero__bg-mobile img.lang-en {
     stroke-dashoffset: 0;
   }
 }
-.hero__arc-shimmer {
-  opacity: 0;
-  animation:
-    hero-arc-shimmer-fade 1.2s ease-out 4s forwards,
-    hero-arc-shimmer 4.5s linear 4.4s infinite;
-}
-@keyframes hero-arc-shimmer-fade {
-  to {
-    opacity: 0.85;
-  }
-}
-@keyframes hero-arc-shimmer {
-  0% {
-    stroke-dashoffset: 400;
-  }
-  100% {
-    stroke-dashoffset: -400;
-  }
-}
 .hero__arc-glow {
   opacity: 0;
   transform-origin: center;
@@ -624,7 +605,6 @@ html:not([lang="en"]) .hero__bg-mobile img.lang-en {
 @media (prefers-reduced-motion: reduce) {
   .hero__arc,
   .hero__arc-path,
-  .hero__arc-shimmer,
   .hero__arc-glow,
   .hero__arc-pin,
   .hero__arc-label {
