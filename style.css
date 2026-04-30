@@ -263,7 +263,7 @@ ul {
   background: #fff;
 }
 .header.is-light .header__logo img {
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+  filter: none;
 }
 .header.is-scrolled.is-light .nav__link {
   color: var(--ink);
@@ -289,11 +289,30 @@ ul {
   display: flex;
   align-items: center;
   height: 76px;
+  position: relative;
 }
 .header__logo img {
   height: 100%;
   width: auto;
-  transition: filter 0.4s var(--ease);
+  transition: opacity 0.4s var(--ease);
+}
+.header__logo-img--dark {
+  position: relative;
+  opacity: 1;
+}
+.header__logo-img--light {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+.header.is-light .header__logo-img--dark {
+  opacity: 0;
+}
+.header.is-light .header__logo-img--light {
+  opacity: 1;
 }
 
 .nav {
