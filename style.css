@@ -4021,3 +4021,93 @@ html[lang="en"] .lang-en {
   color: var(--muted);
   line-height: 1.45;
 }
+
+/* ================================================================
+   FLOATING CONTACT STACK — Telegram + WhatsApp
+   ================================================================ */
+.contact-fab-stack {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.contact-fab {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.25s var(--ease),
+    box-shadow 0.3s var(--ease);
+}
+.contact-fab:hover {
+  transform: scale(1.06);
+}
+.contact-fab__icon {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  z-index: 2;
+}
+.contact-fab--wa {
+  background: #25d366;
+  box-shadow: 0 6px 22px rgba(37, 211, 102, 0.42);
+}
+.contact-fab--wa:hover {
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.55);
+}
+.contact-fab--tg {
+  background: #229ed9;
+  box-shadow: 0 6px 22px rgba(34, 158, 217, 0.42);
+}
+.contact-fab--tg:hover {
+  box-shadow: 0 10px 30px rgba(34, 158, 217, 0.55);
+}
+.contact-fab__pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: #25d366;
+  opacity: 0.55;
+  animation: contact-fab-pulse 2.4s var(--ease-out) infinite;
+}
+@keyframes contact-fab-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  70% {
+    transform: scale(1.55);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.55);
+    opacity: 0;
+  }
+}
+@media (max-width: 600px) {
+  .contact-fab-stack {
+    bottom: 18px;
+    right: 18px;
+    gap: 12px;
+  }
+  .contact-fab {
+    width: 52px;
+    height: 52px;
+  }
+  .contact-fab__icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-fab__pulse {
+    animation: none;
+  }
+}
