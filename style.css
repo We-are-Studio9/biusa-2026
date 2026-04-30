@@ -246,6 +246,9 @@ ul {
   margin-bottom: -90px;
 }
 
+.header.is-light {
+  background: var(--ink);
+}
 .header.is-scrolled {
   background: rgba(250, 247, 240, 0.92);
   backdrop-filter: saturate(180%) blur(20px);
