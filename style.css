@@ -247,7 +247,7 @@ ul {
 }
 
 .header.is-light {
-  background: var(--ink);
+  background: rgba(0, 0, 0, 0.1);
 }
 .header.is-scrolled {
   background: rgba(250, 247, 240, 0.92);
