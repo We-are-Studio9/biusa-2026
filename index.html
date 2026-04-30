@@ -154,11 +154,11 @@
       >
         <defs>
           <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#FF8200" stop-opacity="0" />
-            <stop offset="20%" stop-color="#FF8200" stop-opacity="0.85" />
+            <stop offset="0%" stop-color="#3C3B6E" stop-opacity="0" />
+            <stop offset="20%" stop-color="#3C3B6E" stop-opacity="0.85" />
             <stop offset="50%" stop-color="#C9A968" stop-opacity="1" />
-            <stop offset="80%" stop-color="#3C3B6E" stop-opacity="0.9" />
-            <stop offset="100%" stop-color="#3C3B6E" stop-opacity="0" />
+            <stop offset="80%" stop-color="#FF8200" stop-opacity="0.9" />
+            <stop offset="100%" stop-color="#FF8200" stop-opacity="0" />
           </linearGradient>
           <radialGradient id="cityGlow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stop-color="#FFE9B0" stop-opacity="1" />
@@ -186,10 +186,10 @@
           fill="url(#cityGlow)"
         />
 
-        <!-- The arc itself -->
+        <!-- The arc itself (Philadelphia → Abidjan) -->
         <path
           class="hero__arc-path"
-          d="M 1080 500 Q 800 80 540 180"
+          d="M 540 180 Q 800 80 1080 500"
           fill="none"
           stroke="url(#arcGrad)"
           stroke-width="2.4"
@@ -198,7 +198,7 @@
         />
         <path
           class="hero__arc-shimmer"
-          d="M 1080 500 Q 800 80 540 180"
+          d="M 540 180 Q 800 80 1080 500"
           fill="none"
           stroke="#fff"
           stroke-width="1.4"
