@@ -103,110 +103,75 @@ ul {
    ================================================================ */
 .topbar {
   background: var(--ink);
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 12px;
-  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
   position: relative;
   z-index: 60;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 .topbar__inner {
   max-width: var(--container);
   margin: 0 auto;
-  padding: 11px var(--gutter);
+  padding: 14px var(--gutter);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 32px;
   flex-wrap: wrap;
 }
 .topbar__left,
 .topbar__right {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 28px;
+}
+.topbar__sep {
+  color: rgba(255, 255, 255, 0.28);
+  margin: 0 0.35em;
+  font-weight: 400;
 }
 .topbar__countdown {
   display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: rgba(255, 255, 255, 0.92);
+  align-items: baseline;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
 }
 .topbar__countdown [data-countdown-days],
 .topbar__countdown [data-countdown-days-en] {
   display: inline-block;
-  min-width: 1.6ch;
+  min-width: 1.4ch;
   font-variant-numeric: tabular-nums;
   color: var(--gold-light);
-  font-weight: 700;
-}
-.topbar__countdown-pulse {
-  width: 7px;
-  height: 7px;
-  background: #4ade80;
-  border-radius: 50%;
-  position: relative;
-  flex-shrink: 0;
-}
-.topbar__countdown-pulse::after {
-  content: "";
-  position: absolute;
-  inset: -3px;
-  border-radius: 50%;
-  background: rgba(74, 222, 128, 0.4);
-  animation: pulse-dot 2s ease-out infinite;
-}
-@keyframes pulse-dot {
-  0% {
-    transform: scale(0.6);
-    opacity: 0.9;
-  }
-  100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-.topbar__dot {
-  width: 6px;
-  height: 6px;
-  background: var(--gold-light);
-  border-radius: 50%;
-  display: inline-block;
-  box-shadow: 0 0 12px var(--gold-light);
-  animation: pulse 2.4s var(--ease) infinite;
-}
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.5;
-    transform: scale(1.4);
-  }
+  font-weight: 600;
+  margin: 0 0.25em;
 }
 .topbar__lang {
   display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 600;
+  align-items: baseline;
+  gap: 10px;
 }
 .topbar__lang button {
-  color: rgba(255, 255, 255, 0.4);
-  padding: 2px 6px;
-  font-size: 12px;
-  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.42);
+  padding: 0;
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
   font-weight: 600;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  cursor: pointer;
   transition: color 0.2s var(--ease);
 }
 .topbar__lang button.is-active,
 .topbar__lang button:hover {
   color: #fff;
 }
-.topbar__lang span {
-  color: rgba(255, 255, 255, 0.2);
+.topbar__lang-sep {
+  color: rgba(255, 255, 255, 0.18);
+  font-weight: 300;
 }
 
 @media (max-width: 768px) {
