@@ -286,15 +286,16 @@ ul {
 }
 
 .header__logo {
-  display: flex;
-  align-items: center;
-  height: 76px;
+  display: inline-block;
   position: relative;
+  height: 88px;
+  line-height: 0;
 }
 .header__logo img {
   height: 100%;
   width: auto;
-  transition: opacity 0.4s var(--ease);
+  display: block;
+  transition: opacity 0.35s var(--ease);
 }
 .header__logo-img--dark {
   position: relative;
@@ -302,9 +303,9 @@ ul {
 }
 .header__logo-img--light {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   height: 100%;
+  width: auto;
   opacity: 0;
   pointer-events: none;
 }
@@ -313,6 +314,11 @@ ul {
 }
 .header.is-light .header__logo-img--light {
   opacity: 1;
+}
+@media (max-width: 768px) {
+  .header__logo {
+    height: 64px;
+  }
 }
 
 .nav {
