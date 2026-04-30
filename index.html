@@ -1,0 +1,3109 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="BUSINESS IVOIRE USA 2026 — Mission économique et diplomatique officielle Côte d'Ivoire × Pennsylvanie. 10 — 13 juin 2026, Philadelphie. Inscriptions ouvertes."
+    />
+    <meta name="theme-color" content="#0A0A0A" />
+    <meta
+      property="og:title"
+      content="BUSINESS IVOIRE USA 2026 · 10 — 13 Juin · Philadelphie"
+    />
+    <meta
+      property="og:description"
+      content="Mission économique et diplomatique officielle Côte d'Ivoire × Pennsylvanie. Forum stratégique, partenariats institutionnels, Journée Culturelle."
+    />
+    <meta property="og:image" content="assets/hero-desktop-fr.png" />
+    <meta property="og:type" content="website" />
+    <title>BUSINESS IVOIRE USA 2026 · Mission Officielle · Philadelphie</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+  </head>
+  <body>
+    <!-- TOPBAR -->
+    <div class="topbar">
+      <div class="topbar__inner">
+        <div class="topbar__left">
+          <span class="topbar__dot"></span>
+          <span class="lang-fr"
+            >Mission Officielle · 10 — 13 Juin 2026 · Pennsylvanie</span
+          >
+          <span class="lang-en"
+            >Official Mission · June 10 — 13, 2026 · Pennsylvania</span
+          >
+        </div>
+        <div class="topbar__right">
+          <span
+            class="topbar__countdown"
+            id="topbarCountdown"
+            aria-live="polite"
+          >
+            <span class="topbar__countdown-pulse" aria-hidden="true"></span>
+            <span class="lang-fr"
+              >J-<span data-countdown-days>—</span> · Ouverture de la
+              mission</span
+            >
+            <span class="lang-en"
+              >D-<span data-countdown-days-en>—</span> · Mission opening</span
+            >
+          </span>
+          <span class="topbar__lang">
+            <button data-lang="fr" class="is-active">FR</button>
+            <span>·</span>
+            <button data-lang="en">EN</button>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEADER (transparent over hero, becomes solid on scroll) -->
+    <header class="header is-light" id="header">
+      <div class="header__inner">
+        <a href="#" class="header__logo" aria-label="Business Ivoire USA 2026">
+          <img
+            src="assets/logo-horizontal.png"
+            alt="Business Ivoire USA 2026"
+          />
+        </a>
+        <nav class="nav" aria-label="Navigation principale">
+          <a href="#mission" class="nav__link"
+            ><span class="lang-fr">Mission</span
+            ><span class="lang-en">Mission</span></a
+          >
+          <a href="#programme" class="nav__link"
+            ><span class="lang-fr">Programme</span
+            ><span class="lang-en">Programme</span></a
+          >
+          <a href="#hebergement" class="nav__link"
+            ><span class="lang-fr">Hébergement</span
+            ><span class="lang-en">Lodging</span></a
+          >
+          <a href="#faq" class="nav__link"
+            ><span class="lang-fr">FAQ</span><span class="lang-en">FAQ</span></a
+          >
+          <a href="#contact" class="nav__link"
+            ><span class="lang-fr">Contact</span
+            ><span class="lang-en">Contact</span></a
+          >
+        </nav>
+        <a href="#inscription" class="header__cta">
+          <span class="lang-fr">S'inscrire</span
+          ><span class="lang-en">Register</span>
+        </a>
+        <button class="nav__toggle" aria-label="Menu" id="navToggle">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- HERO — full screen earth-bg + caption center-left -->
+    <section class="hero">
+      <div class="hero__bg parallax">
+        <!-- Desktop: earth-bg.png pure (no branding baked in) -->
+        <img
+          class="hero__bg-img"
+          src="assets/earth-bg.png"
+          alt="Business Ivoire USA 2026"
+          fetchpriority="high"
+        />
+        <!-- Mobile: branded square (ratio correct) -->
+        <picture class="hero__bg-mobile">
+          <img
+            src="assets/hero-mobile-fr.png"
+            alt="Business Ivoire USA 2026"
+            class="lang-fr"
+            fetchpriority="high"
+          />
+          <img
+            src="assets/hero-mobile-en.png"
+            alt="Business Ivoire USA 2026"
+            class="lang-en"
+            fetchpriority="high"
+          />
+        </picture>
+      </div>
+      <div class="hero__overlay"></div>
+
+      <!-- Animated SVG arc Abidjan -> Philadelphia -->
+      <svg
+        class="hero__arc"
+        viewBox="0 0 1440 900"
+        preserveAspectRatio="xMidYMid slice"
+        aria-hidden="true"
+      >
+        <defs>
+          <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#FF8200" stop-opacity="0" />
+            <stop offset="20%" stop-color="#FF8200" stop-opacity="0.85" />
+            <stop offset="50%" stop-color="#C9A968" stop-opacity="1" />
+            <stop offset="80%" stop-color="#3C3B6E" stop-opacity="0.9" />
+            <stop offset="100%" stop-color="#3C3B6E" stop-opacity="0" />
+          </linearGradient>
+          <radialGradient id="cityGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FFE9B0" stop-opacity="1" />
+            <stop offset="40%" stop-color="#FFE9B0" stop-opacity="0.4" />
+            <stop offset="100%" stop-color="#FFE9B0" stop-opacity="0" />
+          </radialGradient>
+          <filter id="arcBlur" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="0.6" />
+          </filter>
+        </defs>
+
+        <!-- City glows -->
+        <circle
+          class="hero__arc-glow hero__arc-glow--abj"
+          cx="1080"
+          cy="500"
+          r="60"
+          fill="url(#cityGlow)"
+        />
+        <circle
+          class="hero__arc-glow hero__arc-glow--phi"
+          cx="540"
+          cy="180"
+          r="60"
+          fill="url(#cityGlow)"
+        />
+
+        <!-- The arc itself -->
+        <path
+          class="hero__arc-path"
+          d="M 1080 500 Q 800 80 540 180"
+          fill="none"
+          stroke="url(#arcGrad)"
+          stroke-width="2.4"
+          stroke-linecap="round"
+          filter="url(#arcBlur)"
+        />
+        <path
+          class="hero__arc-shimmer"
+          d="M 1080 500 Q 800 80 540 180"
+          fill="none"
+          stroke="#fff"
+          stroke-width="1.4"
+          stroke-linecap="round"
+          stroke-dasharray="40 360"
+          stroke-dashoffset="0"
+        />
+
+        <!-- City pins -->
+        <g
+          class="hero__arc-pin hero__arc-pin--abj"
+          transform="translate(1080 500)"
+        >
+          <circle r="5" fill="#FF8200" />
+          <circle r="2" fill="#fff" />
+        </g>
+        <g
+          class="hero__arc-pin hero__arc-pin--phi"
+          transform="translate(540 180)"
+        >
+          <circle r="5" fill="#C9A968" />
+          <circle r="2" fill="#fff" />
+        </g>
+
+        <!-- City labels -->
+        <text class="hero__arc-label" x="1080" y="528" text-anchor="middle">
+          ABIDJAN
+        </text>
+        <text class="hero__arc-label" x="540" y="208" text-anchor="middle">
+          PHILADELPHIA
+        </text>
+      </svg>
+
+      <div class="hero__inner">
+        <div class="hero__caption">
+          <span class="eyebrow"
+            ><span class="lang-fr"
+              >MISSION OFFICIELLE · 10 — 13 JUIN 2026 · PENNSYLVANIE</span
+            ><span class="lang-en"
+              >OFFICIAL MISSION · JUNE 10 — 13, 2026 · PENNSYLVANIA</span
+            ></span
+          >
+          <h1>
+            <span class="lang-fr"
+              >Le rendez-vous économique<br /><em
+                >Côte d'Ivoire × Pennsylvanie</em
+              >.</span
+            >
+            <span class="lang-en"
+              >The economic summit between<br /><em
+                >Côte d'Ivoire and Pennsylvania</em
+              >.</span
+            >
+          </h1>
+          <p class="hero__sub">
+            <span class="lang-fr"
+              >100+ décideurs · 7 autorités mandatées · 3 jours pour formaliser
+              des partenariats économiques, sportifs et culturels structurants
+              en marge de la Coupe du Monde FIFA 2026.</span
+            >
+            <span class="lang-en"
+              >100+ decision-makers · 7 mandated authorities · 3 days to
+              formalize structuring economic, sports and cultural partnerships
+              on the sidelines of the FIFA 2026 World Cup.</span
+            >
+          </p>
+          <div class="hero__ctas">
+            <a href="#inscription" class="btn btn--hero-primary"
+              ><span class="lang-fr">S'INSCRIRE À LA MISSION</span
+              ><span class="lang-en">REGISTER FOR THE MISSION</span></a
+            >
+            <a href="#contact" class="btn btn--ghost"
+              ><span class="lang-fr">NOUS CONTACTER</span
+              ><span class="lang-en">CONTACT US</span></a
+            >
+          </div>
+        </div>
+
+        <!-- Save the date floating card — bottom right -->
+        <div class="hero__savedate" aria-hidden="true">
+          <img
+            src="assets/hero-desktop-fr.png"
+            alt="Save the date BIUSA 2026"
+            class="lang-fr"
+          />
+          <img
+            src="assets/hero-desktop-en.png"
+            alt="Save the date BIUSA 2026"
+            class="lang-en"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- KPI BANNER — full width, Africa CEO Forum pattern -->
+    <section class="stats-banner">
+      <div class="stats-banner__inner">
+        <div class="stats-banner__item">
+          <span class="stats-banner__num">100<sup>+</sup></span>
+          <span class="stats-banner__label"
+            ><span class="lang-fr">DÉCIDEURS AU FORUM</span
+            ><span class="lang-en">FORUM DECISION-MAKERS</span></span
+          >
+        </div>
+        <div class="stats-banner__item">
+          <span class="stats-banner__num">7</span>
+          <span class="stats-banner__label"
+            ><span class="lang-fr">AUTORITÉS MANDANTES</span
+            ><span class="lang-en">MANDATING AUTHORITIES</span></span
+          >
+        </div>
+        <div class="stats-banner__item">
+          <span class="stats-banner__num">3</span>
+          <span class="stats-banner__label"
+            ><span class="lang-fr">JOURS DE MISSION</span
+            ><span class="lang-en">MISSION DAYS</span></span
+          >
+        </div>
+        <div class="stats-banner__item">
+          <span class="stats-banner__num">500<sup>+</sup></span>
+          <span class="stats-banner__label"
+            ><span class="lang-fr">PARTICIPANTS TOTAL</span
+            ><span class="lang-en">TOTAL PARTICIPANTS</span></span
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION -->
+    <section class="section section--first" id="mission">
+      <div class="container">
+        <div class="mission__grid">
+          <div class="mission__copy reveal">
+            <span class="eyebrow"
+              ><span class="lang-fr">La Mission</span
+              ><span class="lang-en">The Mission</span></span
+            >
+            <h2 class="section__title">
+              <span class="lang-fr"
+                >La première plateforme majeure économique et diplomatique
+                ivoirienne sur le sol américain.</span
+              >
+              <span class="lang-en"
+                >The first major Ivorian economic and diplomatic platform held
+                on American soil.</span
+              >
+            </h2>
+            <p class="lang-fr">
+              En trois jours, concentrez ce que les entreprises mettent des
+              années à développer : accès privilégié aux décideurs, visibilité
+              internationale, formalisation d'accords et couverture médiatique à
+              l'échelle mondiale.
+            </p>
+            <p class="lang-fr">
+              La mission est portée par cinq Ministères et Institutions de la
+              République de Côte d'Ivoire, et coordonnée avec le Commonwealth de
+              Pennsylvanie, le PA Department of Community and Economic
+              Development et leurs partenaires institutionnels.
+            </p>
+            <p class="lang-en">
+              Three days to compress what most companies take years to build:
+              direct access to decision-makers, international visibility,
+              formalization of memoranda of understanding, and worldwide media
+              coverage.
+            </p>
+            <p class="lang-en">
+              The mission is led by five Ministries and Institutions of the
+              Republic of Côte d'Ivoire, coordinated with the Commonwealth of
+              Pennsylvania, the PA Department of Community and Economic
+              Development and their institutional partners.
+            </p>
+          </div>
+          <aside class="mission__pull reveal">
+            <div class="mission__pull-quote">
+              <span class="lang-fr"
+                >« Trois jours pour franchir un cap dans les relations
+                institutionnelles entre Abidjan et Philadelphie. »</span
+              >
+              <span class="lang-en"
+                >"Three days to mark a turning point in institutional relations
+                between Abidjan and Philadelphia."</span
+              >
+            </div>
+            <div class="mission__pull-meta">
+              <span class="mission__pull-line"></span>
+              <span
+                ><span class="lang-fr"
+                  >Naïm Fteriche · Africa Practice Lead</span
+                ><span class="lang-en"
+                  >Naïm Fteriche · Africa Practice Lead</span
+                ></span
+              >
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORUM SPOTLIGHT -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow"
+            ><span class="lang-fr">Temps fort · 12 Juin</span
+            ><span class="lang-en">Key Moment · June 12</span></span
+          >
+          <h2 class="section__title">
+            <span class="lang-fr"
+              >Le Forum Stratégique. Une journée. Quatre panels. Des connexions
+              stratégiques.</span
+            >
+            <span class="lang-en"
+              >The Strategic Forum. One day. Four panels. Contacts that
+              matter.</span
+            >
+          </h2>
+        </div>
+
+        <div class="forum-spotlight reveal">
+          <div class="forum-spotlight__media">
+            <span class="forum-spotlight__date"
+              >12 Juin 2026 · Greenberg Traurig</span
+            >
+            <img
+              src="assets/programme/greenberg-skyline.jpg"
+              alt="Forum Stratégique Philadelphie"
+              loading="lazy"
+            />
+          </div>
+          <div class="forum-spotlight__body">
+            <h3>
+              <span class="lang-fr"
+                >Greenberg Traurig · 1717 Arch Street · 22nd Floor.</span
+              >
+              <span class="lang-en"
+                >Greenberg Traurig · 1717 Arch Street · 22nd Floor.</span
+              >
+            </h3>
+            <p>
+              <span class="lang-fr"
+                >Au cœur de Center City Philadelphie, le Forum réunit les
+                autorités économiques ivoiriennes et pennsylvaniennes, les
+                fédérations professionnelles et les opérateurs privés autour de
+                quatre tables rondes sectorielles, de sessions B2B / B2G
+                structurées et d'une Deal Room dédiée à la concrétisation de
+                partenariats.</span
+              >
+              <span class="lang-en"
+                >In the heart of Center City Philadelphia, the Forum brings
+                together Ivorian and Pennsylvanian economic authorities,
+                professional federations, and private operators around four
+                sectoral roundtables, structured B2B / B2G sessions, and a Deal
+                Room dedicated to formalizing partnerships.</span
+              >
+            </p>
+            <ul class="forum-spotlight__panels">
+              <li>
+                <span class="lang-fr"
+                  >Panel I — Agriculture &amp; Sécurité Alimentaire</span
+                ><span class="lang-en"
+                  >Panel I — Agriculture &amp; Food Security</span
+                >
+              </li>
+              <li>
+                <span class="lang-fr"
+                  >Panel II — Forum de l'Économie Sportive</span
+                ><span class="lang-en">Panel II — Sports Economy Forum</span>
+              </li>
+              <li>
+                <span class="lang-fr"
+                  >Panel III — Opportunités d'Investissement &amp; de
+                  Commerce</span
+                ><span class="lang-en"
+                  >Panel III — Investment &amp; Trade Opportunities</span
+                >
+              </li>
+              <li>
+                <span class="lang-fr"
+                  >Panel IV — Le Sport comme Levier de Développement</span
+                ><span class="lang-en"
+                  >Panel IV — Sport as a Development Lever</span
+                >
+              </li>
+            </ul>
+            <a href="#inscription" class="btn btn--primary"
+              ><span class="lang-fr">Réserver ma place au Forum</span
+              ><span class="lang-en">Reserve my Forum seat</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMME -->
+    <section class="section" id="programme">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow"
+            ><span class="lang-fr">Programme Officiel</span
+            ><span class="lang-en">Official Programme</span></span
+          >
+          <h2 class="section__title">
+            <span class="lang-fr"
+              >Quatre temps forts. Trois villes. Une trajectoire
+              institutionnelle.</span
+            >
+            <span class="lang-en"
+              >Four cornerstones. Three cities. One institutional
+              trajectory.</span
+            >
+          </h2>
+          <p class="section__lede">
+            <span class="lang-fr"
+              >Du Capitole de Harrisburg au Forum Stratégique de Philadelphie,
+              en passant par les visites institutionnelles et la Journée
+              Culturelle de Chester — chaque étape est conçue comme un point de
+              contact diplomatique, économique ou culturel structurant.</span
+            >
+            <span class="lang-en"
+              >From the Harrisburg Capitol to the Philadelphia Strategic Forum,
+              through institutional visits and the Chester Cultural Day — each
+              stage is designed as a structuring diplomatic, economic, or
+              cultural touchpoint.</span
+            >
+          </p>
+        </div>
+
+        <div class="programme__grid reveal-stagger">
+          <article
+            class="prog-card prog-card--01"
+            role="button"
+            tabindex="0"
+            data-day="10juin"
+            aria-label="Voir le programme du 10 juin"
+          >
+            <div class="prog-card__head">
+              <span class="prog-card__day">10</span>
+              <span class="prog-card__month">JUIN</span>
+            </div>
+            <div class="prog-card__body">
+              <span class="prog-card__city">Harrisburg, PA</span>
+              <h3 class="prog-card__title">
+                <span class="lang-fr">Cérémonie Fête Nationale</span
+                ><span class="lang-en">National Day Ceremony</span>
+              </h3>
+              <p class="prog-card__place">
+                <span class="lang-fr"
+                  >Capitol Rotunda · 14h30 — 16h00 · Discours protocolaires,
+                  proclamation Gouverneur, performances live.</span
+                ><span class="lang-en"
+                  >Capitol Rotunda · 2:30 PM — 4:00 PM · Protocol speeches,
+                  Governor's proclamation, live performances.</span
+                >
+              </p>
+              <span class="prog-card__tag"
+                ><span class="lang-fr">Protocole d'État</span
+                ><span class="lang-en">State Protocol</span></span
+              >
+            </div>
+          </article>
+
+          <article
+            class="prog-card prog-card--02"
+            role="button"
+            tabindex="0"
+            data-day="11juin"
+            aria-label="Voir le programme du 11 juin"
+          >
+            <div class="prog-card__head">
+              <span class="prog-card__day">11</span>
+              <span class="prog-card__month">JUIN</span>
+            </div>
+            <div class="prog-card__body">
+              <span class="prog-card__city">Philadelphie, PA</span>
+              <h3 class="prog-card__title">
+                <span class="lang-fr">Visites Institutionnelles</span
+                ><span class="lang-en">Institutional Visits</span>
+              </h3>
+              <p class="prog-card__place">
+                <span class="lang-fr"
+                  >Philadelphia Museum of Art · PhilaPort Authority · 11h00 —
+                  16h00 · Déjeuner protocolaire, focus commerce
+                  international.</span
+                ><span class="lang-en"
+                  >Philadelphia Museum of Art · PhilaPort Authority · 11:00 AM —
+                  4:00 PM · Protocol lunch, international trade focus.</span
+                >
+              </p>
+              <span class="prog-card__tag"
+                ><span class="lang-fr">Diplomatie Culturelle</span
+                ><span class="lang-en">Cultural Diplomacy</span></span
+              >
+            </div>
+          </article>
+
+          <article
+            class="prog-card prog-card--03 prog-card--featured"
+            role="button"
+            tabindex="0"
+            data-day="12juin"
+            aria-label="Voir le programme du 12 juin"
+          >
+            <span class="prog-card__badge"
+              ><span class="lang-fr">Moment clé</span
+              ><span class="lang-en">Key Moment</span></span
+            >
+            <div class="prog-card__head">
+              <span class="prog-card__day">12</span>
+              <span class="prog-card__month">JUIN</span>
+            </div>
+            <div class="prog-card__body">
+              <span class="prog-card__city"
+                >Greenberg Traurig · Philadelphie</span
+              >
+              <h3 class="prog-card__title">
+                <span class="lang-fr">Forum stratégique</span
+                ><span class="lang-en">Strategic Forum</span>
+              </h3>
+              <p class="prog-card__place">
+                <span class="lang-fr"
+                  >1717 Arch Street · 22nd Floor · 8h30 — 17h00 · Tables Rondes,
+                  Rencontres B2B, Deal Room, concrétisation de
+                  partenariats.</span
+                ><span class="lang-en"
+                  >1717 Arch Street · 22nd Floor · 8:30 AM — 5:00 PM ·
+                  Roundtables, B2B Meetings, Deal Room, partnership
+                  formalization.</span
+                >
+              </p>
+              <span class="prog-card__tag"
+                ><span class="lang-fr">Forum Économique</span
+                ><span class="lang-en">Economic Forum</span></span
+              >
+            </div>
+          </article>
+
+          <article
+            class="prog-card prog-card--04"
+            role="button"
+            tabindex="0"
+            data-day="13juin"
+            aria-label="Voir le programme du 13 juin"
+          >
+            <div class="prog-card__head">
+              <span class="prog-card__day">13</span>
+              <span class="prog-card__month">JUIN</span>
+            </div>
+            <div class="prog-card__body">
+              <span class="prog-card__city">Chester, PA</span>
+              <h3 class="prog-card__title">
+                <span class="lang-fr">Journée Culturelle</span
+                ><span class="lang-en">Cultural Day</span>
+              </h3>
+              <p class="prog-card__place">
+                <span class="lang-fr"
+                  >Harrah's Philadelphia · 8h30 — Soirée · Panel, expositions,
+                  gastronomie, concert d'artistes ivoiriens.</span
+                ><span class="lang-en"
+                  >Harrah's Philadelphia · 8:30 AM — Evening · Panel,
+                  exhibitions, gastronomy, Ivorian artists concert.</span
+                >
+              </p>
+              <span class="prog-card__tag"
+                ><span class="lang-fr">Connecting Worlds</span
+                ><span class="lang-en">Connecting Worlds</span></span
+              >
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTHORITIES STRIP -->
+    <section class="authorities-strip">
+      <div class="container">
+        <div class="authorities-strip__title">
+          <span class="lang-fr">Sous le Haut Patronage de</span
+          ><span class="lang-en">Under the High Patronage of</span>
+        </div>
+
+        <div class="emblems reveal">
+          <figure class="emblem">
+            <img
+              src="assets/seals/ci-coat.png"
+              alt="Coat of Arms of the Republic of Côte d'Ivoire"
+              class="emblem__img"
+            />
+            <figcaption>
+              <div class="emblem__label">
+                <span class="lang-fr">République de Côte d'Ivoire</span
+                ><span class="lang-en">Republic of Côte d'Ivoire</span>
+              </div>
+              <div class="emblem__sublabel">
+                <span class="lang-fr"
+                  >5 Ministères et Institutions mandatés</span
+                ><span class="lang-en"
+                  >5 Mandated Ministries and Institutions</span
+                >
+              </div>
+            </figcaption>
+          </figure>
+
+          <div class="emblem__amp" aria-hidden="true">×</div>
+
+          <figure class="emblem">
+            <img
+              src="assets/seals/pa-seal.png"
+              alt="Seal of the Commonwealth of Pennsylvania"
+              class="emblem__img"
+            />
+            <figcaption>
+              <div class="emblem__label">
+                <span class="lang-fr">Commonwealth de Pennsylvanie</span
+                ><span class="lang-en">Commonwealth of Pennsylvania</span>
+              </div>
+              <div class="emblem__sublabel">
+                <span class="lang-fr"
+                  >Department of Community &amp; Economic Development</span
+                ><span class="lang-en"
+                  >Department of Community &amp; Economic Development</span
+                >
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMATS -->
+    <section class="section section--ink">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow"
+            ><span class="lang-fr">Formats du Forum</span
+            ><span class="lang-en">Forum Formats</span></span
+          >
+          <h2 class="section__title" style="color: #fff">
+            <span class="lang-fr"
+              >Trois dispositifs pour générer des résultats mesurables.</span
+            >
+            <span class="lang-en"
+              >Three operational formats to generate measurable outcomes.</span
+            >
+          </h2>
+          <p class="section__lede">
+            <span class="lang-fr"
+              >Le Forum n'est pas un événement de représentation. Il est conçu
+              autour de trois formats opérationnels qui structurent
+              l'intégralité de la journée et garantissent la qualité des
+              contacts noués.</span
+            >
+            <span class="lang-en"
+              >The Forum is not a ceremonial event. It is built around three
+              operational formats that structure the entire day and guarantee
+              the quality of contacts established.</span
+            >
+          </p>
+        </div>
+
+        <div class="formats reveal-stagger">
+          <div class="format">
+            <span class="format__num">— I.</span>
+            <h3 class="format__title">
+              <span class="lang-fr">Tables Rondes Sectorielles</span
+              ><span class="lang-en">Sectoral Roundtables</span>
+            </h3>
+            <p class="format__text">
+              <span class="lang-fr"
+                >Quatre panels modérés réunissant officiels ivoiriens, autorités
+                pennsylvaniennes et opérateurs privés autour de l'agriculture,
+                de l'économie sportive, du commerce bilatéral et de
+                l'investissement structurant.</span
+              >
+              <span class="lang-en"
+                >Four moderated panels gathering Ivorian officials,
+                Pennsylvanian authorities, and private operators on agriculture,
+                sports economics, bilateral trade, and structuring
+                investment.</span
+              >
+            </p>
+          </div>
+          <div class="format">
+            <span class="format__num">— II.</span>
+            <h3 class="format__title">
+              <span class="lang-fr">Rencontres B2B &amp; B2G</span
+              ><span class="lang-en">B2B &amp; B2G Meetings</span>
+            </h3>
+            <p class="format__text">
+              <span class="lang-fr"
+                >Sessions privées préparées en amont entre dirigeants
+                américains, décideurs publics ivoiriens et investisseurs
+                institutionnels — agenda construit selon votre filière, brief
+                préalable, suivi post-mission.</span
+              >
+              <span class="lang-en"
+                >Private sessions prepared in advance between American
+                executives, Ivorian public decision-makers, and institutional
+                investors — agenda built around your sector, prior briefing,
+                post-mission follow-up.</span
+              >
+            </p>
+          </div>
+          <div class="format">
+            <span class="format__num">— III.</span>
+            <h3 class="format__title">
+              <span class="lang-fr">Deal Room</span
+              ><span class="lang-en">Deal Room</span>
+            </h3>
+            <p class="format__text">
+              <span class="lang-fr"
+                >Un espace dédié aux négociations stratégiques et à la
+                concrétisation des accords. Officialisation des engagements en
+                présence des deux délégations.</span
+              >
+              <span class="lang-en"
+                >A space dedicated to strategic negotiations and the
+                formalization of agreements. Commitments officialized in the
+                presence of both delegations.</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY PARTNER FEATURES -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow"
+            ><span class="lang-fr">Pourquoi Devenir Partenaire</span
+            ><span class="lang-en">Why Partner With Us</span></span
+          >
+          <h2 class="section__title">
+            <span class="lang-fr"
+              >Trois leviers clés. Une opportunité unique.</span
+            >
+            <span class="lang-en"
+              >Three structuring benefits. One opportunity window.</span
+            >
+          </h2>
+        </div>
+
+        <div class="features reveal-stagger">
+          <div class="feature">
+            <span class="feature__num">— 01</span>
+            <div class="feature__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 21l-4.35-4.35" />
+                <circle cx="11" cy="11" r="8" />
+              </svg>
+            </div>
+            <h3 class="feature__title">
+              <span class="lang-fr">Accès Direct aux Décideurs</span
+              ><span class="lang-en">Direct Access to Decision-Makers</span>
+            </h3>
+            <p class="feature__text">
+              <span class="lang-fr"
+                >Réunions B2B et B2G organisées en amont avec les ministres
+                ivoiriens, le PA Department of Commerce et les principaux
+                investisseurs institutionnels américains.</span
+              ><span class="lang-en"
+                >B2B and B2G meetings organized in advance with Ivorian
+                ministers, the PA Department of Commerce, and the leading
+                American institutional investors.</span
+              >
+            </p>
+          </div>
+          <div class="feature">
+            <span class="feature__num">— 02</span>
+            <div class="feature__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path
+                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                />
+              </svg>
+            </div>
+            <h3 class="feature__title">
+              <span class="lang-fr">Visibilité Internationale</span
+              ><span class="lang-en">International Visibility</span>
+            </h3>
+            <p class="feature__text">
+              <span class="lang-fr"
+                >Couverture médias ivoiriens et américains, communiqués de
+                presse officiels, visibilité digitale auprès de 50 000+ abonnés
+                et présence dans les photos protocolaires.</span
+              ><span class="lang-en"
+                >Ivorian and American media coverage, official press releases,
+                digital visibility to 50,000+ subscribers and presence in
+                protocol photos.</span
+              >
+            </p>
+          </div>
+          <div class="feature">
+            <span class="feature__num">— 03</span>
+            <div class="feature__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+              </svg>
+            </div>
+            <h3 class="feature__title">
+              <span class="lang-fr">Concrétisation d'accords stratégiques</span
+              ><span class="lang-en">Strategic Agreements</span>
+            </h3>
+            <p class="feature__text">
+              <span class="lang-fr"
+                >Un espace dédié à la conclusion d'accords institutionnels et
+                commerciaux, réunissant les deux délégations officielles.</span
+              ><span class="lang-en"
+                >A space dedicated to formalizing institutional and commercial
+                agreements, bringing together both official delegations.</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VOIX ANNONCÉES / SPEAKERS -->
+    <section class="section section--alt" id="speakers">
+      <div class="container">
+        <div class="section__head section__head--center reveal">
+          <span class="eyebrow"
+            ><span class="lang-fr">Voix Annoncées</span
+            ><span class="lang-en">Announced Voices</span></span
+          >
+          <h2 class="section__title">
+            <span class="lang-fr"
+              >Six interventions <em>de premier rang</em> sur des filières
+              structurantes.</span
+            >
+            <span class="lang-en"
+              >Six <em>top-tier</em> interventions on structuring sectors.</span
+            >
+          </h2>
+          <p class="section__lede">
+            <span class="lang-fr"
+              >La grille d'intervention du Forum Stratégique est arrêtée par les
+              ministères en charge de chaque filière. Les confirmations
+              individuelles font l'objet d'un communiqué de presse 30 jours
+              avant la mission.</span
+            >
+            <span class="lang-en"
+              >The Strategic Forum's speakers grid is set by the ministries in
+              charge of each sector. Individual confirmations are issued via
+              press release 30 days before the mission.</span
+            >
+          </p>
+        </div>
+
+        <div class="speakers reveal-stagger">
+          <article class="speaker">
+            <div class="speaker__top">
+              <span class="speaker__flag" aria-hidden="true">
+                <img src="https://flagcdn.com/w80/ci.png" alt="Côte d'Ivoire" />
+              </span>
+              <span class="speaker__avatar" aria-hidden="true">
+                <span class="speaker__monogram">CI</span>
+              </span>
+            </div>
+            <div class="speaker__body">
+              <span class="speaker__topic"
+                ><span class="lang-fr">Sport et Culture</span
+                ><span class="lang-en">Sport &amp; Culture</span></span
+              >
+              <h3 class="speaker__name">
+                <span class="lang-fr"
+                  >Ministère des Sports et du Cadre de Vie<br />Ministère de la
+                  Culture et de la Francophonie</span
+                ><span class="lang-en"
+                  >Ministry of Sports and Quality of Life<br />Ministry of
+                  Culture and Francophonie</span
+                >
+              </h3>
+              <span class="speaker__org">République de Côte d'Ivoire</span>
+            </div>
+            <span class="speaker__status speaker__status--confirmed"
+              ><span class="lang-fr">Autorité mandante</span
+              ><span class="lang-en">Mandating authority</span></span
+            >
+          </article>
+
+          <article class="speaker">
+            <div class="speaker__top">
+              <span class="speaker__flag" aria-hidden="true">
+                <img src="https://flagcdn.com/w80/ci.png" alt="Côte d'Ivoire" />
+              </span>
+              <span class="speaker__avatar" aria-hidden="true">
+                <span class="speaker__monogram">CI</span>
+              </span>
+            </div>
+            <div class="speaker__body">
+              <span class="speaker__topic"
+                ><span class="lang-fr">Commerce et Filières Industrielles</span
+                ><span class="lang-en"
+                  >Trade &amp; Industrial Sectors</span
+                ></span
+              >
+              <h3 class="speaker__name">
+                <span class="lang-fr"
+                  >Ministère du Commerce, de l'Industrie et de l'Artisanat</span
+                ><span class="lang-en"
+                  >Ministry of Trade, Industry and Crafts</span
+                >
+              </h3>
+              <p class="speaker__role">
+                <span class="lang-fr"
+                  >Stratégie commerciale et industrielle de la mission</span
+                ><span class="lang-en"
+                  >Commercial and industrial strategy of the mission</span
+                >
+              </p>
+              <span class="speaker__org">République de Côte d'Ivoire</span>
+            </div>
+            <span class="speaker__status speaker__status--confirmed"
+              ><span class="lang-fr">Autorité mandante</span
+              ><span class="lang-en">Mandating authority</span></span
+            >
+          </article>
+
+          <article class="speaker">
+            <div class="speaker__top">
+              <span class="speaker__flag" aria-hidden="true">
+                <img src="https://flagcdn.com/w80/ci.png" alt="Côte d'Ivoire" />
+              </span>
+              <span class="speaker__avatar" aria-hidden="true">
+                <span class="speaker__monogram">CI</span>
+              </span>
+            </div>
+            <div class="speaker__body">
+              <span class="speaker__topic"
+                ><span class="lang-fr">Agriculture et Export</span
+                ><span class="lang-en">Agriculture &amp; Export</span></span
+              >
+              <h3 class="speaker__name">
+                <span class="lang-fr"
+                  >Agence de Promotion des Exportations · CI Export</span
+                ><span class="lang-en"
+                  >Export Promotion Agency · CI Export</span
+                >
+              </h3>
+              <p class="speaker__role">
+                <span class="lang-fr"
+                  >Pilotage de la promotion des exportations ivoiriennes</span
+                ><span class="lang-en">Promotion of Ivorian exports</span>
+              </p>
+              <span class="speaker__org">République de Côte d'Ivoire</span>
+            </div>
+            <span class="speaker__status speaker__status--confirmed"
+              ><span class="lang-fr">Confirmé</span
+              ><span class="lang-en">Confirmed</span></span
+            >
+          </article>
+
+          <article class="speaker">
+            <div class="speaker__top">
+              <span class="speaker__flag" aria-hidden="true">
+                <img src="https://flagcdn.com/w80/us.png" alt="United States" />
+              </span>
+              <span class="speaker__avatar" aria-hidden="true">
+                <span class="speaker__monogram">RR</span>
+              </span>
+            </div>
+            <div class="speaker__body">
+              <span class="speaker__topic"
+                ><span class="lang-fr">Souveraineté Agricole</span
+                ><span class="lang-en">Agricultural Sovereignty</span></span
+              >
+              <h3 class="speaker__name">Hon. Russell Redding</h3>
+              <p class="speaker__role">
+                <span class="lang-fr">Secrétaire d'État à l'Agriculture</span
+                ><span class="lang-en">Secretary of Agriculture</span>
+              </p>
+              <span class="speaker__org">Commonwealth of Pennsylvania</span>
+            </div>
+            <span class="speaker__status"
+              ><span class="lang-fr">Sous réserve de confirmation</span
+              ><span class="lang-en">Subject to confirmation</span></span
+            >
+          </article>
+
+          <article class="speaker">
+            <div class="speaker__top">
+              <span class="speaker__flag" aria-hidden="true">
+                <img src="https://flagcdn.com/w80/us.png" alt="United States" />
+              </span>
+              <span class="speaker__avatar" aria-hidden="true">
+                <span class="speaker__monogram">RS</span>
+              </span>
+            </div>
+            <div class="speaker__body">
+              <span class="speaker__topic"
+                ><span class="lang-fr">Coopération Économique</span
+                ><span class="lang-en">Economic Cooperation</span></span
+              >
+              <h3 class="speaker__name">Hon. Rick Siger</h3>
+              <p class="speaker__role">
+                <span class="lang-fr"
+                  >Secrétaire · Department of Community &amp; Economic
+                  Development</span
+                ><span class="lang-en"
+                  >Secretary · Department of Community &amp; Economic
+                  Development</span
+                >
+              </p>
+              <span class="speaker__org">Commonwealth of Pennsylvania</span>
+            </div>
+            <span class="speaker__status"
+              ><span class="lang-fr">Sous réserve de confirmation</span
+              ><span class="lang-en">Subject to confirmation</span></span
+            >
+          </article>
+
+          <article class="speaker">
+            <div class="speaker__top">
+              <span class="speaker__flag" aria-hidden="true">
+                <img src="https://flagcdn.com/w80/us.png" alt="United States" />
+              </span>
+              <span class="speaker__avatar" aria-hidden="true">
+                <span class="speaker__monogram">LB</span>
+              </span>
+            </div>
+            <div class="speaker__body">
+              <span class="speaker__topic"
+                ><span class="lang-fr">Investissement &amp; Capital</span
+                ><span class="lang-en">Investment &amp; Capital</span></span
+              >
+              <h3 class="speaker__name">M. Luke Bernstein</h3>
+              <p class="speaker__role">
+                <span class="lang-fr"
+                  >Président &amp; CEO · PA Chamber of Business and
+                  Industry</span
+                ><span class="lang-en"
+                  >President &amp; CEO · PA Chamber of Business and
+                  Industry</span
+                >
+              </p>
+              <span class="speaker__org">Pennsylvania, USA</span>
+            </div>
+            <span class="speaker__status"
+              ><span class="lang-fr">Sous réserve de confirmation</span
+              ><span class="lang-en">Subject to confirmation</span></span
+            >
+          </article>
+        </div>
+
+        <p class="speakers__disclaimer reveal">
+          <span class="lang-fr"
+            >La grille d'intervention complète, finalisée 30 jours avant la
+            mission, est communiquée aux participants inscrits par le Bureau de
+            Coordination.</span
+          ><span class="lang-en"
+            >The complete speakers grid, finalized 30 days before the mission,
+            is communicated to registered participants by the Coordination
+            Office.</span
+          >
+        </p>
+      </div>
+    </section>
+
+    <!-- TRIBUNE OFFICIELLE -->
+    <section class="tribune" id="tribune">
+      <div class="container tribune__inner reveal">
+        <span class="tribune__mark" aria-hidden="true">&ldquo;</span>
+        <span class="eyebrow tribune__eyebrow"
+          ><span class="lang-fr">Vision stratégique</span
+          ><span class="lang-en">Strategic Vision</span></span
+        >
+        <blockquote class="tribune__quote">
+          <p class="lang-fr">
+            Business Ivoire USA 2026 n'est ni un salon ni un événement de
+            représentation. C'est une plateforme opérationnelle, conçue par les
+            autorités ivoiriennes et l'État de Pennsylvanie, pour ouvrir — en
+            marge de la Coupe du Monde FIFA 2026 — un cycle de coopération
+            économique et diplomatique structuré : concrétisation d'accords
+            stratégiques, mobilisation de capitaux et consolidation des filières
+            prioritaires.
+          </p>
+          <p class="lang-en">
+            Business Ivoire USA 2026 is neither a trade show nor a
+            representational event. It is an operational platform, designed by
+            Ivorian authorities and the Commonwealth of Pennsylvania to open —
+            on the sidelines of the FIFA 2026 World Cup — a structured cycle of
+            economic and diplomatic cooperation: formalization of strategic
+            agreements, capital mobilization, and consolidation of priority
+            sectors.
+          </p>
+        </blockquote>
+        <div class="tribune__signature">
+          <span class="tribune__line" aria-hidden="true"></span>
+          <div>
+            <strong class="tribune__org">Bureau de Coordination</strong>
+            <span class="tribune__sub"
+              ><span class="lang-fr"
+                >Mission Officielle BUSINESS IVOIRE USA 2026 · Avril 2026</span
+              ><span class="lang-en"
+                >Official Mission BUSINESS IVOIRE USA 2026 · April 2026</span
+              ></span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTEURS PRIORITAIRES -->
+    <section class="section" id="secteurs">
+      <div class="container">
+        <div class="section__head section__head--center reveal">
+          <span class="eyebrow"
+            ><span class="lang-fr">Secteurs Prioritaires</span
+            ><span class="lang-en">Priority Sectors</span></span
+          >
+          <h2 class="section__title">
+            <span class="lang-fr"
+              >Cinq filières <em>structurantes</em>. Une cartographie
+              d'opportunités.</span
+            >
+            <span class="lang-en"
+              >Five <em>structuring</em> sectors. An opportunity mapping.</span
+            >
+          </h2>
+          <p class="section__lede">
+            <span class="lang-fr"
+              >Les axes prioritaires de la mission ont été co-définis par les
+              ministères ivoiriens et le Department of Community & Economic
+              Development de Pennsylvanie, sur la base d'une étude de
+              complémentarité industrielle conduite en mars 2026.</span
+            >
+            <span class="lang-en"
+              >The mission's priority sectors were co-defined by the Ivorian
+              ministries and the Pennsylvania Department of Community & Economic
+              Development, based on an industrial complementarity study
+              conducted in March 2026.</span
+            >
+          </p>
+        </div>
+
+        <div class="sectors reveal-stagger">
+          <article class="sector">
+            <div class="sector__icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 48 48"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M24 8c-4 6-12 8-12 18 0 8 6 14 12 14s12-6 12-14c0-10-8-12-12-18z"
+                />
+                <path d="M24 12v28" />
+                <path d="M24 22c-3 0-6 1-8 3" />
+                <path d="M24 28c3 0 6 1 8 3" />
+              </svg>
+            </div>
+            <span class="sector__num">01</span>
+            <h3 class="sector__title">
+              <span class="lang-fr">Agriculture &amp; Agro-industrie</span>
+              <span class="lang-en">Agriculture &amp; Agro-industry</span>
+            </h3>
+            <p class="sector__lede">
+              <span class="lang-fr"
+                >Cacao, cajou, karité, coton — transformation locale,
+                traçabilité et accès aux marchés américains.</span
+              ><span class="lang-en"
+                >Cocoa, cashew, shea, cotton — local processing, traceability
+                and access to U.S. markets.</span
+              >
+            </p>
+            <div class="sector__meta">
+              <span class="lang-fr">CI #1 mondial cacao &amp; cajou</span>
+              <span class="lang-en">CI World #1 cocoa &amp; cashew</span>
+            </div>
+          </article>
+
+          <article class="sector">
+            <div class="sector__icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 48 48"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="24" cy="24" r="14" />
+                <path d="M24 10v28M10 24h28" />
+                <path d="M14 14l20 20M14 34l20-20" />
+              </svg>
+            </div>
+            <span class="sector__num">02</span>
+            <h3 class="sector__title">
+              <span class="lang-fr">Économie du Sport</span>
+              <span class="lang-en">Sports Economy</span>
+            </h3>
+            <p class="sector__lede">
+              <span class="lang-fr"
+                >Infrastructure stadiums, formation, droits TV, sponsoring,
+                événements internationaux — héritage CAN 2023 &amp; FIFA
+                2026.</span
+              ><span class="lang-en"
+                >Stadium infrastructure, training, TV rights, sponsoring,
+                international events — AFCON 2023 &amp; FIFA 2026 legacy.</span
+              >
+            </p>
+            <div class="sector__meta">
+              <span class="lang-fr">Marché global 600 Mds USD</span>
+              <span class="lang-en">Global market USD 600 B</span>
+            </div>
+          </article>
+
+          <article class="sector">
+            <div class="sector__icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 48 48"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M16 8l16 16-12 0 8 16" />
+                <path d="M8 24h32" />
+              </svg>
+            </div>
+            <span class="sector__num">03</span>
+            <h3 class="sector__title">
+              <span class="lang-fr">Énergie &amp; Transition</span>
+              <span class="lang-en">Energy &amp; Transition</span>
+            </h3>
+            <p class="sector__lede">
+              <span class="lang-fr"
+                >Hydroélectricité, solaire, gaz naturel, hydrogène vert,
+                électrification rurale — souveraineté énergétique.</span
+              ><span class="lang-en"
+                >Hydropower, solar, natural gas, green hydrogen, rural
+                electrification — energy sovereignty.</span
+              >
+            </p>
+            <div class="sector__meta">
+              <span class="lang-fr">PA #2 producteur gaz naturel USA</span>
+              <span class="lang-en">PA #2 U.S. natural gas producer</span>
+            </div>
+          </article>
+
+          <article class="sector">
+            <div class="sector__icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 48 48"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="6" y="20" width="36" height="22" />
+                <path d="M6 20l18-12 18 12" />
+                <path d="M16 42v-12h16v12" />
+              </svg>
+            </div>
+            <span class="sector__num">04</span>
+            <h3 class="sector__title">
+              <span class="lang-fr">Infrastructures &amp; BTP</span>
+              <span class="lang-en">Infrastructure &amp; Construction</span>
+            </h3>
+            <p class="sector__lede">
+              <span class="lang-fr"
+                >Plan National de Développement 2026-2030 — ports, routes,
+                logements, transports urbains structurants à Abidjan et
+                régions.</span
+              ><span class="lang-en"
+                >National Development Plan 2026-2030 — ports, roads, housing,
+                urban transport in Abidjan and regions.</span
+              >
+            </p>
+            <div class="sector__meta">
+              <span class="lang-fr">Plan 60 000 Mds FCFA</span>
+              <span class="lang-en">Plan FCFA 60 000 B</span>
+            </div>
+          </article>
+
+          <article class="sector">
+            <div class="sector__icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 48 48"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="6" y="10" width="36" height="24" rx="2" />
+                <path d="M6 28h36" />
+                <path d="M18 38h12M24 34v4" />
+              </svg>
+            </div>
+            <span class="sector__num">05</span>
+            <h3 class="sector__title">
+              <span class="lang-fr">Tech &amp; Innovation</span>
+              <span class="lang-en">Tech &amp; Innovation</span>
+            </h3>
+            <p class="sector__lede">
+              <span class="lang-fr"
+                >Fintech, e-commerce, IA appliquée, edtech, healthtech —
+                écosystème abidjanais en accélération, capitaux PA en
+                déploiement.</span
+              ><span class="lang-en"
+                >Fintech, e-commerce, applied AI, edtech, healthtech — Abidjan
+                ecosystem accelerating, PA capital deploying.</span
+              >
+            </p>
+            <div class="sector__meta">
+              <span class="lang-fr">+38 % adoption mobile money 2025</span>
+              <span class="lang-en">+38 % mobile money adoption 2025</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DÉLÉGATIONS OFFICIELLES -->
+    <section class="section section--alt" id="delegations">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow"
+            ><span class="lang-fr">Délégations Officielles Attendues</span
+            ><span class="lang-en">Expected Official Delegations</span></span
+          >
+          <h2 class="section__title">
+            <span class="lang-fr"
+              >Les hautes autorités présentes pour bâtir le pont Côte d'Ivoire ×
+              Pennsylvanie.</span
+            >
+            <span class="lang-en"
+              >Senior officials gathering to build the bridge between Côte
+              d'Ivoire and Pennsylvania.</span
+            >
+          </h2>
+          <p class="section__lede">
+            <span class="lang-fr"
+              >Liste prévisionnelle des personnalités confirmées et attendues,
+              sous réserve d'ajustements diplomatiques. La présence finale de
+              chaque délégué sera confirmée 30 jours avant la mission.</span
+            >
+            <span class="lang-en"
+              >Preliminary list of confirmed and expected officials, subject to
+              diplomatic adjustments. Final attendance of each delegate will be
+              confirmed 30 days before the mission.</span
+            >
+          </p>
+        </div>
+
+        <div class="delegations">
+          <div class="delegation reveal">
+            <div class="delegation__head">
+              <img
+                src="assets/seals/ci-coat.png"
+                alt="Côte d'Ivoire coat of arms"
+                class="delegation__flag"
+              />
+              <div>
+                <span class="delegation__country"
+                  ><span class="lang-fr">Délégation Ivoirienne</span
+                  ><span class="lang-en">Ivorian Delegation</span></span
+                >
+                <span class="delegation__count"
+                  >13 <span class="lang-fr">officiels attendus</span
+                  ><span class="lang-en">officials expected</span></span
+                >
+              </div>
+            </div>
+            <ul class="delegation__list">
+              <li>
+                <span class="delegation__name">S.E. Mme Kandia Camara</span
+                ><span class="delegation__role"
+                  ><span class="lang-fr"
+                    >Présidente du Sénat de Côte d'Ivoire</span
+                  ><span class="lang-en"
+                    >President of the Senate of Côte d'Ivoire</span
+                  ></span
+                >
+              </li>
+              <li>
+                <span class="delegation__name">Mme Nialé Kaba</span
+                ><span class="delegation__role"
+                  ><span class="lang-fr"
+                    >Ministre d'État · Affaires Étrangères</span
+                  ><span class="lang-en"
+                    >Minister of State · Foreign Affairs</span
+                  ></span
+                >
+              </li>
+              <li>
+                <span class="delegation__name">M. Adjé Silas Metch</span
+                ><span class="delegation__role"
+                  ><span class="lang-fr"
+                    >Ministre des Sports et du Cadre de Vie</span
+                  ><span class="lang-en"
+                    >Minister of Sports and Living Environment</span
+                  ></span
+                >
+              </li>
+              <li>
+                <span class="delegation__name">Mme Françoise Remarck</span
+                ><span class="delegation__role"
+                  ><span class="lang-fr"
+                    >Ministre de la Culture et de la Francophonie</span
+                  ><span class="lang-en"
+                    >Minister of Culture and Francophonie</span
+                  ></span
+                >
+              </li>
+              <li>
+                <span class="delegation__name">M. Siandou Fofana</span
+                ><span class="delegation__role"
+                  ><span class="lang-fr"
+                    >Ministre du Tourisme et des Loisirs</span
+                  ><span class="lang-en"
+                    >Minister of Tourism and Leisure</span
+                  ></span
+                >
+              </li>
+              <li>
+                <span class="delegation__name">M. Ibrahim Kalil Konaté</span
+                ><span class="delegation__role"
+                  ><span class="lang-fr"
+                    >Ministre du Commerce, de l'Industrie et de
+                    l'Artisanat</span
+                  ><span class="lang-en"
+                    >Minister of Trade, Industry and Crafts</span
+                  ></span
+                >
+              </li>
+              <li>
+                <span class="delegation__name">S.E.M. Ibrahima Touré</span
+                ><span class="delegation__role"
+                  ><span class="lang-fr"
+                    >Ambassadeur CI · États-Unis d'Amérique</span
+                  ><span class="lang-en"
+                    >Ambassador of Côte d'Ivoire · United States</span
+                  ></span
+                >
+              </li>
+              <li>
+                <span class="delegation__name">S.E.M. Inza Camara</span
+                ><span class="delegation__role"
+                  ><span class="lang-fr">Consul Général CI · New York</span
+                  ><span class="lang-en"
+                    >Consul General CI · New York</span
+                  ></span
+                >
+              </li>
+              <li>
+                <span class="delegation__name">M. Faman Touré</span
+                ><span class="delegation__role"
+                  ><span class="lang-fr">Président de la CCI-CI</span
+                  ><span class="lang-en">President of CCI-CI</span></span
+                >
+              </li>
+              <li>
+                <span class="delegation__name">Mme Solange Amichia</span
+                ><span class="delegation__role"
+                  ><span class="lang-fr">Directrice Générale du CEPICI</span
+                  ><span class="lang-en">Director General of CEPICI</span></span
+                >
+              </li>
+              <li>
+                <span class="delegation__name">Dr. Kaladji Fadiga</span
+                ><span class="delegation__role"
+                  ><span class="lang-fr">Directeur Général · CI Export</span
+                  ><span class="lang-en"
+                    >Director General · CI Export</span
+                  ></span
+                >
+              </li>
+              <li>
+                <span class="delegation__name">Dr. Kanigui Ouattara</span
+                ><span class="delegation__role"
+                  ><span class="lang-fr">Président de la FI-PME</span
+                  ><span class="lang-en">President of FI-PME</span></span
+                >
+              </li>
+              <li>
+                <span class="delegation__name">M. Mamadou Berthé</span
+                ><span class="delegation__role"
+                  ><span class="lang-fr"
+                    >Directeur Général · Conseil Coton Anacarde et Karité</span
+                  ><span class="lang-en"
+                    >Director General · Cotton, Cashew and Shea Council</span
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="delegation reveal">
+            <div class="delegation__head">
+              <img
+                src="assets/seals/pa-seal.png"
+                alt="Pennsylvania state seal"
+                class="delegation__flag"
+              />
+              <div>
+                <span class="delegation__country"
+                  ><span class="lang-fr">Délégation Pennsylvanienne</span
+                  ><span class="lang-en">Pennsylvania Delegation</span></span
+                >
+                <span class="delegation__count"
+                  >11 <span class="lang-fr">officiels attendus</span
+                  ><span class="lang-en">officials expected</span></span
+                >
+              </div>
+            </div>
+            <ul class="delegation__list">
+              <li>
+                <span class="delegation__name">Hon. Josh Shapiro</span
+                ><span class="delegation__role"
+                  ><span class="lang-fr">Gouverneur de Pennsylvanie</span
+                  ><span class="lang-en">Governor of Pennsylvania</span></span
+                >
+              </li>
+              <li>
+                <span class="delegation__name">Hon. Kim Ward</span
+                ><span class="delegation__role"
+                  ><span class="lang-fr"
+                    >Présidente du Sénat de Pennsylvanie</span
+                  ><span class="lang-en"
+                    >President of the Pennsylvania Senate</span
+                  ></span
+                >
+              </li>
+              <li>
+                <span class="delegation__name">Hon. Cherelle Parker</span
+                ><span class="delegation__role"
+                  ><span class="lang-fr">Maire de Philadelphie</span
+                  ><span class="lang-en">Mayor of Philadelphia</span></span
+                >
+              </li>
+              <li>
+                <span class="delegation__name">Hon. Stefan Roots</span
+                ><span class="delegation__role"
+                  ><span class="lang-fr">Maire de Chester</span
+                  ><span class="lang-en">Mayor of Chester</span></span
+                >
+              </li>
+              <li>
+                <span class="delegation__name">Hon. Russell Redding</span
+                ><span class="delegation__role"
+                  ><span class="lang-fr">Ministre de l'Agriculture · PA</span
+                  ><span class="lang-en"
+                    >Secretary of Agriculture · PA</span
+                  ></span
+                >
+              </li>
+              <li>
+                <span class="delegation__name">Hon. Rick Siger</span
+                ><span class="delegation__role"
+                  ><span class="lang-fr">Ministre du DCED · PA</span
+                  ><span class="lang-en">Secretary of DCED · PA</span></span
+                >
+              </li>
+              <li>
+                <span class="delegation__name">Hon. Dr. Khalid Mumin</span
+                ><span class="delegation__role"
+                  ><span class="lang-fr">Ministre de l'Éducation · PA</span
+                  ><span class="lang-en"
+                    >Secretary of Education · PA</span
+                  ></span
+                >
+              </li>
+              <li>
+                <span class="delegation__name">M. David Briel</span
+                ><span class="delegation__role"
+                  ><span class="lang-fr"
+                    >Directeur · Commerce International &amp; Investissement,
+                    DCED</span
+                  ><span class="lang-en"
+                    >Executive Director · International Business &amp;
+                    Investment, DCED</span
+                  ></span
+                >
+              </li>
+              <li>
+                <span class="delegation__name">M. Luke Bernstein</span
+                ><span class="delegation__role"
+                  ><span class="lang-fr"
+                    >Président &amp; CEO · PA Chamber of Business and
+                    Industry</span
+                  ><span class="lang-en"
+                    >President &amp; CEO · PA Chamber of Business and
+                    Industry</span
+                  ></span
+                >
+              </li>
+              <li>
+                <span class="delegation__name">M. Thomas N. Young</span
+                ><span class="delegation__role"
+                  ><span class="lang-fr"
+                    >Président &amp; CEO · World Trade Center of Greater
+                    Philadelphia</span
+                  ><span class="lang-en"
+                    >President &amp; CEO · World Trade Center of Greater
+                    Philadelphia</span
+                  ></span
+                >
+              </li>
+              <li>
+                <span class="delegation__name">M. Tim McDermott</span
+                ><span class="delegation__role"
+                  ><span class="lang-fr"
+                    >Président · Philadelphia Union (MLS)</span
+                  ><span class="lang-en"
+                    >President · Philadelphia Union (MLS)</span
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTENARIATS — section retirée intégralement (4 packs Bronze→Platine + Discuter de votre engagement) -->
+    <section
+      class="section"
+      id="partenariats"
+      hidden
+      style="display: none"
+      aria-hidden="true"
+    >
+      <!-- Bloc supprimé sur demande Naïm 29/04/2026 -->
+    </section>
+    <!-- SPONSORS CONFIRMÉS — section retirée -->
+
+    <!-- HÉBERGEMENT -->
+    <section class="section section--alt" id="hebergement">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow"
+            ><span class="lang-fr">Hébergement Recommandé</span
+            ><span class="lang-en">Recommended Lodging</span></span
+          >
+          <h2 class="section__title">
+            <span class="lang-fr"
+              >Une sélection d'établissements à proximité du Forum.</span
+            >
+            <span class="lang-en"
+              >A curated list of establishments close to the Forum.</span
+            >
+          </h2>
+        </div>
+
+        <div class="lodging-intro reveal">
+          <p class="section__lede">
+            <span class="lang-fr"
+              >Pour faciliter votre venue, nous recommandons les hôtels suivants
+              — tous situés à courte distance du Forum Stratégique (Greenberg
+              Traurig, Center City Philadelphie). Réservation directe auprès de
+              chaque établissement.</span
+            >
+            <span class="lang-en"
+              >To ease your travel, we recommend the following hotels — all
+              within short distance of the Strategic Forum (Greenberg Traurig,
+              Center City Philadelphia). Book directly with each
+              establishment.</span
+            >
+          </p>
+          <p class="lodging-intro__note">
+            <span class="lang-fr"
+              ><strong>Note :</strong> les disponibilités sur la période FIFA
+              2026 sont limitées. Réservation anticipée fortement recommandée.
+              Tarifs négociés communicables aux délégations officielles sur
+              demande.</span
+            >
+            <span class="lang-en"
+              ><strong>Note:</strong> availability during the FIFA 2026 window
+              is limited. Early booking strongly recommended. Negotiated rates
+              may be communicated upon request to official delegations.</span
+            >
+          </p>
+        </div>
+
+        <!-- SEARCHBAR HÔTELS — FIFA hospitality style -->
+        <form
+          class="hotel-searchbar reveal"
+          id="hotelSearchbar"
+          action="#"
+          method="get"
+        >
+          <div class="hotel-searchbar__fields">
+            <label class="hotel-searchbar__field">
+              <span class="hotel-searchbar__label"
+                ><span class="lang-fr">Arrivée</span
+                ><span class="lang-en">Check-in</span></span
+              >
+              <input
+                type="date"
+                name="checkin"
+                min="2026-06-08"
+                max="2026-06-15"
+                value="2026-06-10"
+              />
+            </label>
+            <div class="hotel-searchbar__sep" aria-hidden="true"></div>
+            <label class="hotel-searchbar__field">
+              <span class="hotel-searchbar__label"
+                ><span class="lang-fr">Départ</span
+                ><span class="lang-en">Check-out</span></span
+              >
+              <input
+                type="date"
+                name="checkout"
+                min="2026-06-08"
+                max="2026-06-26"
+                value="2026-06-13"
+              />
+            </label>
+            <div class="hotel-searchbar__sep" aria-hidden="true"></div>
+            <label class="hotel-searchbar__field">
+              <span class="hotel-searchbar__label"
+                ><span class="lang-fr">Voyageurs</span
+                ><span class="lang-en">Guests</span></span
+              >
+              <select name="guests">
+                <option value="1" data-fr="1 personne" data-en="1 person">
+                  1 personne
+                </option>
+                <option
+                  value="2"
+                  data-fr="2 personnes"
+                  data-en="2 people"
+                  selected
+                >
+                  2 personnes
+                </option>
+                <option value="3" data-fr="3 personnes" data-en="3 people">
+                  3 personnes
+                </option>
+                <option value="4" data-fr="4 personnes" data-en="4 people">
+                  4 personnes
+                </option>
+                <option value="5+" data-fr="5+ personnes" data-en="5+ people">
+                  5+ personnes
+                </option>
+              </select>
+            </label>
+          </div>
+          <button type="submit" class="hotel-searchbar__cta">
+            <span class="lang-fr">Voir les hôtels disponibles</span
+            ><span class="lang-en">View available hotels</span>
+          </button>
+        </form>
+
+        <div class="hotels reveal-stagger" id="hotelGrid">
+          <a
+            class="hotel"
+            href="https://www.fourseasons.com/philadelphia/"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="hotel__media">
+              <img
+                src="assets/hotels/four-seasons.jpg"
+                alt="Four Seasons Hotel Philadelphia"
+                loading="lazy"
+              />
+              <span class="hotel__stars">★★★★★</span>
+              <span class="hotel__loc">Comcast Center</span>
+            </div>
+            <div class="hotel__body">
+              <h3 class="hotel__name">Four Seasons Hotel Philadelphia</h3>
+              <p class="hotel__addr">
+                1 N 19th Street · Philadelphia, PA 19103
+              </p>
+              <span class="hotel__meta"
+                ><span class="lang-fr">3 min · Forum Stratégique</span
+                ><span class="lang-en">3 min · Strategic Forum</span></span
+              >
+              <span class="hotel__cta"
+                ><span class="lang-fr">Réserver sur le site officiel</span
+                ><span class="lang-en">Book on official website</span></span
+              >
+            </div>
+          </a>
+
+          <a
+            class="hotel"
+            href="https://www.ritzcarlton.com/en/hotels/phlrz-the-ritz-carlton-philadelphia/overview/"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="hotel__media">
+              <img
+                src="assets/hotels/ritz-carlton.jpg"
+                alt="The Ritz-Carlton Philadelphia"
+                loading="lazy"
+              />
+              <span class="hotel__stars">★★★★★</span>
+              <span class="hotel__loc">Avenue of the Arts</span>
+            </div>
+            <div class="hotel__body">
+              <h3 class="hotel__name">The Ritz-Carlton, Philadelphia</h3>
+              <p class="hotel__addr">
+                10 Avenue of the Arts · Philadelphia, PA 19102
+              </p>
+              <span class="hotel__meta"
+                ><span class="lang-fr">8 min · Forum Stratégique</span
+                ><span class="lang-en">8 min · Strategic Forum</span></span
+              >
+              <span class="hotel__cta"
+                ><span class="lang-fr">Réserver sur le site officiel</span
+                ><span class="lang-en">Book on official website</span></span
+              >
+            </div>
+          </a>
+
+          <a
+            class="hotel"
+            href="https://www.hilton.com/en/hotels/phlloqq-the-logan-philadelphia/"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="hotel__media">
+              <img
+                src="assets/hotels/logan.jpg"
+                alt="The Logan Philadelphia"
+                loading="lazy"
+              />
+              <span class="hotel__stars">★★★★</span>
+              <span class="hotel__loc">Curio Collection</span>
+            </div>
+            <div class="hotel__body">
+              <h3 class="hotel__name">The Logan Philadelphia</h3>
+              <p class="hotel__addr">1 Logan Square · Philadelphia, PA 19103</p>
+              <span class="hotel__meta"
+                ><span class="lang-fr">2 min · Forum Stratégique</span
+                ><span class="lang-en">2 min · Strategic Forum</span></span
+              >
+              <span class="hotel__cta"
+                ><span class="lang-fr">Réserver sur le site officiel</span
+                ><span class="lang-en">Book on official website</span></span
+              >
+            </div>
+          </a>
+
+          <a
+            class="hotel"
+            href="https://all.accor.com/hotel/3267/index.fr.shtml"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="hotel__media">
+              <img
+                src="assets/hotels/sofitel.jpg"
+                alt="Sofitel Philadelphia at Rittenhouse Square"
+                loading="lazy"
+              />
+              <span class="hotel__stars">★★★★</span>
+              <span class="hotel__loc">Rittenhouse Square</span>
+            </div>
+            <div class="hotel__body">
+              <h3 class="hotel__name">
+                Sofitel Philadelphia at Rittenhouse Square
+              </h3>
+              <p class="hotel__addr">
+                120 S 17th Street · Philadelphia, PA 19103
+              </p>
+              <span class="hotel__meta"
+                ><span class="lang-fr">7 min · Forum Stratégique</span
+                ><span class="lang-en">7 min · Strategic Forum</span></span
+              >
+              <span class="hotel__cta"
+                ><span class="lang-fr">Réserver sur le site officiel</span
+                ><span class="lang-en">Book on official website</span></span
+              >
+            </div>
+          </a>
+
+          <a
+            class="hotel"
+            href="https://www.loewshotels.com/philadelphia-hotel"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="hotel__media">
+              <img
+                src="assets/hotels/loews.jpg"
+                alt="Loews Philadelphia Hotel"
+                loading="lazy"
+              />
+              <span class="hotel__stars">★★★★</span>
+              <span class="hotel__loc">Center City</span>
+            </div>
+            <div class="hotel__body">
+              <h3 class="hotel__name">Loews Philadelphia Hotel</h3>
+              <p class="hotel__addr">
+                1200 Market Street · Philadelphia, PA 19107
+              </p>
+              <span class="hotel__meta"
+                ><span class="lang-fr">10 min · Forum Stratégique</span
+                ><span class="lang-en">10 min · Strategic Forum</span></span
+              >
+              <span class="hotel__cta"
+                ><span class="lang-fr">Réserver sur le site officiel</span
+                ><span class="lang-en">Book on official website</span></span
+              >
+            </div>
+          </a>
+
+          <a
+            class="hotel"
+            href="https://www.harrahsphilly.com/hotel"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="hotel__media">
+              <img
+                src="assets/hotels/harrahs.jpg"
+                alt="Harrah's Philadelphia Chester"
+                loading="lazy"
+              />
+              <span class="hotel__stars">★★★★</span>
+              <span class="hotel__loc">Chester · 13 Juin</span>
+            </div>
+            <div class="hotel__body">
+              <h3 class="hotel__name">Harrah's Philadelphia · Chester</h3>
+              <p class="hotel__addr">
+                777 Harrah's Boulevard · Chester, PA 19013
+              </p>
+              <span class="hotel__meta"
+                ><span class="lang-fr">Sur place · Journée Culturelle</span
+                ><span class="lang-en">On-site · Cultural Day</span></span
+              >
+              <span class="hotel__cta"
+                ><span class="lang-fr">Réserver sur le site officiel</span
+                ><span class="lang-en">Book on official website</span></span
+              >
+            </div>
+          </a>
+
+          <a
+            class="hotel"
+            href="https://www.rittenhousehotel.com/"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="hotel__media">
+              <img
+                src="assets/hotels/rittenhouse.jpg"
+                alt="The Rittenhouse Hotel"
+                loading="lazy"
+              />
+              <span class="hotel__stars">★★★★★</span>
+              <span class="hotel__loc">Rittenhouse Square</span>
+            </div>
+            <div class="hotel__body">
+              <h3 class="hotel__name">The Rittenhouse Hotel</h3>
+              <p class="hotel__addr">
+                210 W Rittenhouse Square · Philadelphia, PA 19103
+              </p>
+              <span class="hotel__meta"
+                ><span class="lang-fr">8 min · Forum Stratégique</span
+                ><span class="lang-en">8 min · Strategic Forum</span></span
+              >
+              <span class="hotel__cta"
+                ><span class="lang-fr">Réserver sur le site officiel</span
+                ><span class="lang-en">Book on official website</span></span
+              >
+            </div>
+          </a>
+
+          <a
+            class="hotel"
+            href="https://www.hyatt.com/hyatt-centric/en-US/phlct-hyatt-centric-center-city-philadelphia"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="hotel__media">
+              <img
+                src="assets/hotels/hyatt-centric.jpg"
+                alt="Hyatt Centric Center City Philadelphia"
+                loading="lazy"
+              />
+              <span class="hotel__stars">★★★★</span>
+              <span class="hotel__loc">Center City</span>
+            </div>
+            <div class="hotel__body">
+              <h3 class="hotel__name">
+                Hyatt Centric Center City Philadelphia
+              </h3>
+              <p class="hotel__addr">
+                1620 Chancellor Street · Philadelphia, PA 19103
+              </p>
+              <span class="hotel__meta"
+                ><span class="lang-fr">5 min · Forum Stratégique</span
+                ><span class="lang-en">5 min · Strategic Forum</span></span
+              >
+              <span class="hotel__cta"
+                ><span class="lang-fr">Réserver sur le site officiel</span
+                ><span class="lang-en">Book on official website</span></span
+              >
+            </div>
+          </a>
+
+          <a
+            class="hotel"
+            href="https://www.marriott.com/en-us/hotels/phldt-philadelphia-marriott-downtown/overview/"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="hotel__media">
+              <img
+                src="assets/hotels/marriott-downtown.jpg"
+                alt="Philadelphia Marriott Downtown"
+                loading="lazy"
+              />
+              <span class="hotel__stars">★★★★</span>
+              <span class="hotel__loc">Market Street</span>
+            </div>
+            <div class="hotel__body">
+              <h3 class="hotel__name">Philadelphia Marriott Downtown</h3>
+              <p class="hotel__addr">
+                1201 Market Street · Philadelphia, PA 19107
+              </p>
+              <span class="hotel__meta"
+                ><span class="lang-fr">11 min · Forum Stratégique</span
+                ><span class="lang-en">11 min · Strategic Forum</span></span
+              >
+              <span class="hotel__cta"
+                ><span class="lang-fr">Réserver sur le site officiel</span
+                ><span class="lang-en">Book on official website</span></span
+              >
+            </div>
+          </a>
+
+          <a
+            class="hotel"
+            href="https://www.thebellevuehotel.com/"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="hotel__media">
+              <img
+                src="assets/hotels/bellevue.jpg"
+                alt="The Bellevue Hotel Philadelphia"
+                loading="lazy"
+              />
+              <span class="hotel__stars">★★★★</span>
+              <span class="hotel__loc">South Broad Street</span>
+            </div>
+            <div class="hotel__body">
+              <h3 class="hotel__name">The Bellevue Hotel</h3>
+              <p class="hotel__addr">
+                200 S Broad Street · Philadelphia, PA 19102
+              </p>
+              <span class="hotel__meta"
+                ><span class="lang-fr">9 min · Forum Stratégique</span
+                ><span class="lang-en">9 min · Strategic Forum</span></span
+              >
+              <span class="hotel__cta"
+                ><span class="lang-fr">Réserver sur le site officiel</span
+                ><span class="lang-en">Book on official website</span></span
+              >
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP PHILADELPHIA -->
+    <section class="section section--ink" id="map">
+      <div class="container">
+        <div class="section__head section__head--center reveal">
+          <span class="eyebrow"
+            ><span class="lang-fr">Cartographie de la Mission</span
+            ><span class="lang-en">Mission Map</span></span
+          >
+          <h2 class="section__title">
+            <span class="lang-fr"
+              >Quatre lieux <em>institutionnels</em>. Un périmètre
+              maîtrisé.</span
+            >
+            <span class="lang-en"
+              >Four <em>institutional</em> venues. A controlled perimeter.</span
+            >
+          </h2>
+          <p class="section__lede">
+            <span class="lang-fr"
+              >L'ensemble de la mission se déroule dans Center City
+              Philadelphie, dans un rayon piéton de 25 minutes. Un service de
+              navette officiel est mis à disposition des délégations entre les
+              quatre sites.</span
+            >
+            <span class="lang-en"
+              >The mission unfolds entirely within Center City Philadelphia, in
+              a 25-minute walking radius. An official shuttle service is
+              provided to delegations between the four sites.</span
+            >
+          </p>
+        </div>
+
+        <div class="map-wrap reveal">
+          <div class="map-grid">
+            <div
+              id="phillyMap"
+              class="phillyMap"
+              aria-label="Map of Philadelphia mission venues"
+            ></div>
+            <ul class="map-legend">
+              <li class="map-legend__item" data-marker="0">
+                <span class="map-legend__pin">1</span>
+                <div class="map-legend__body">
+                  <span class="map-legend__day"
+                    ><span class="lang-fr"
+                      >11–12 Juin · Forum &amp; Deal Room</span
+                    ><span class="lang-en"
+                      >June 11–12 · Forum &amp; Deal Room</span
+                    ></span
+                  >
+                  <span class="map-legend__name">Greenberg Traurig</span>
+                  <span class="map-legend__addr"
+                    >1717 Arch Street · 22nd Floor</span
+                  >
+                </div>
+              </li>
+              <li class="map-legend__item" data-marker="1">
+                <span class="map-legend__pin">2</span>
+                <div class="map-legend__body">
+                  <span class="map-legend__day"
+                    ><span class="lang-fr">10 Juin · Cérémonie d'ouverture</span
+                    ><span class="lang-en"
+                      >June 10 · Opening ceremony</span
+                    ></span
+                  >
+                  <span class="map-legend__name">The Union League</span>
+                  <span class="map-legend__addr">140 South Broad Street</span>
+                </div>
+              </li>
+              <li class="map-legend__item" data-marker="2">
+                <span class="map-legend__pin">3</span>
+                <div class="map-legend__body">
+                  <span class="map-legend__day"
+                    ><span class="lang-fr">12 Juin · Gala diplomatique</span
+                    ><span class="lang-en"
+                      >June 12 · Diplomatic gala</span
+                    ></span
+                  >
+                  <span class="map-legend__name">Comcast Center</span>
+                  <span class="map-legend__addr"
+                    >1701 John F. Kennedy Blvd</span
+                  >
+                </div>
+              </li>
+              <li class="map-legend__item" data-marker="3">
+                <span class="map-legend__pin">4</span>
+                <div class="map-legend__body">
+                  <span class="map-legend__day"
+                    ><span class="lang-fr">13 Juin · Sport Diplomacy Day</span
+                    ><span class="lang-en"
+                      >June 13 · Sport Diplomacy Day</span
+                    ></span
+                  >
+                  <span class="map-legend__name">Lincoln Financial Field</span>
+                  <span class="map-legend__addr"
+                    >1 Lincoln Financial Field Way</span
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSCRIPTION -->
+    <section class="section register" id="inscription">
+      <div class="container register__inner">
+        <div class="register__copy reveal">
+          <span class="eyebrow" style="color: var(--gold-light)"
+            ><span class="lang-fr">Inscription Officielle</span
+            ><span class="lang-en">Official Registration</span></span
+          >
+          <h2>
+            <span class="lang-fr"
+              >Confirmez votre présence à BUSINESS IVOIRE USA 2026.</span
+            >
+            <span class="lang-en"
+              >Confirm your attendance at BUSINESS IVOIRE USA 2026.</span
+            >
+          </h2>
+          <p>
+            <span class="lang-fr"
+              >Les inscriptions sont nominatives et soumises à validation.
+              Chaque demande est examinée individuellement et fait l'objet d'une
+              réponse écrite par notre Bureau de Coordination dans un délai de
+              72 heures.</span
+            >
+            <span class="lang-en"
+              >Registrations are nominative and subject to validation. Each
+              request is reviewed individually and receives a written response
+              from our Coordination Office within 72 hours.</span
+            >
+          </p>
+          <ul class="register__bullets">
+            <li>
+              <span class="lang-fr"
+                >Forum Stratégique du 12 juin · Greenberg Traurig,
+                Philadelphie</span
+              ><span class="lang-en"
+                >Strategic Forum, June 12 · Greenberg Traurig,
+                Philadelphia</span
+              >
+            </li>
+            <li>
+              <span class="lang-fr"
+                >Journée Culturelle du 13 juin · Harrah's Chester</span
+              ><span class="lang-en"
+                >Cultural Day, June 13 · Harrah's Chester</span
+              >
+            </li>
+            <li>
+              <span class="lang-fr"
+                >Cérémonie Fête Nationale du 10 juin · sur invitation</span
+              ><span class="lang-en"
+                >National Day Ceremony, June 10 · by invitation</span
+              >
+            </li>
+            <li>
+              <span class="lang-fr">Sessions B2B / B2G · sur agenda dédié</span
+              ><span class="lang-en"
+                >B2B / B2G sessions · by dedicated agenda</span
+              >
+            </li>
+          </ul>
+        </div>
+
+        <form
+          class="form reveal"
+          id="registerForm"
+          action="mailto:naimf@protonmail.com"
+          method="post"
+          enctype="text/plain"
+        >
+          <h3 class="form__title">
+            <span class="lang-fr">Formulaire d'inscription</span
+            ><span class="lang-en">Registration form</span>
+          </h3>
+          <p class="form__sub">
+            <span class="lang-fr">Tous les champs sont requis</span
+            ><span class="lang-en">All fields are required</span>
+          </p>
+
+          <div class="form__row">
+            <div class="form__field">
+              <label for="firstname"
+                ><span class="lang-fr">Prénom</span
+                ><span class="lang-en">First name</span></label
+              >
+              <input
+                type="text"
+                id="firstname"
+                name="prenom"
+                required
+                autocomplete="given-name"
+              />
+            </div>
+            <div class="form__field">
+              <label for="lastname"
+                ><span class="lang-fr">Nom</span
+                ><span class="lang-en">Last name</span></label
+              >
+              <input
+                type="text"
+                id="lastname"
+                name="nom"
+                required
+                autocomplete="family-name"
+              />
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__field">
+              <label for="email"
+                ><span class="lang-fr">Email professionnel</span
+                ><span class="lang-en">Professional email</span></label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                autocomplete="email"
+              />
+            </div>
+            <div class="form__field">
+              <label for="phone"
+                ><span class="lang-fr">Téléphone</span
+                ><span class="lang-en">Phone</span></label
+              >
+              <input
+                type="tel"
+                id="phone"
+                name="telephone"
+                required
+                autocomplete="tel"
+              />
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__field">
+              <label for="company"
+                ><span class="lang-fr">Entité / Société</span
+                ><span class="lang-en">Entity / Company</span></label
+              >
+              <input type="text" id="company" name="entite" required />
+            </div>
+            <div class="form__field">
+              <label for="role"
+                ><span class="lang-fr">Fonction</span
+                ><span class="lang-en">Role</span></label
+              >
+              <input type="text" id="role" name="fonction" required />
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__field form__field--full">
+              <label for="participation-form"
+                ><span class="lang-fr">Type de participation</span
+                ><span class="lang-en">Type of participation</span></label
+              >
+              <select id="participation-form" name="participation" required>
+                <option
+                  value=""
+                  data-fr="— Sélectionnez —"
+                  data-en="— Select —"
+                >
+                  — Sélectionnez —
+                </option>
+                <option
+                  value="forum"
+                  data-fr="Forum Stratégique · 12 juin"
+                  data-en="Strategic Forum · June 12"
+                >
+                  Forum Stratégique · 12 juin
+                </option>
+                <option
+                  value="culture"
+                  data-fr="Journée Culturelle · 13 juin"
+                  data-en="Cultural Day · June 13"
+                >
+                  Journée Culturelle · 13 juin
+                </option>
+                <option
+                  value="full"
+                  data-fr="Mission complète · 10 — 13 juin"
+                  data-en="Full mission · June 10 — 13"
+                >
+                  Mission complète · 10 — 13 juin
+                </option>
+                <option
+                  value="partner"
+                  data-fr="Demande dossier Partenariat"
+                  data-en="Partnership dossier request"
+                >
+                  Demande dossier Partenariat
+                </option>
+                <option
+                  value="press"
+                  data-fr="Accréditation Presse"
+                  data-en="Press accreditation"
+                >
+                  Accréditation Presse
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__field form__field--full">
+              <label for="message"
+                ><span class="lang-fr">Message complémentaire</span
+                ><span class="lang-en">Additional message</span></label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Filière, secteur, projets en CI / PA, attentes spécifiques…"
+              ></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="form__submit">
+            <span class="lang-fr">ENVOYER MA DEMANDE</span
+            ><span class="lang-en">SUBMIT MY REQUEST</span>
+            <span aria-hidden="true">→</span>
+          </button>
+
+          <div class="form__trust">
+            <span class="form__trust-item">
+              <svg
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M8 1L2 4v4c0 3.3 2.5 6.4 6 7.2C12.5 14.4 14 11.3 14 8V4L8 1z"
+                />
+              </svg>
+              <span class="lang-fr">Confirmation sous 72h</span
+              ><span class="lang-en">Response within 72h</span>
+            </span>
+            <span class="form__trust-sep" aria-hidden="true">·</span>
+            <span class="form__trust-item">
+              <svg
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="2" y="6" width="12" height="9" rx="1.5" />
+                <path d="M5 6V4.5a3 3 0 0 1 6 0V6" />
+              </svg>
+              <span class="lang-fr">Convention nominative</span
+              ><span class="lang-en">Nominative agreement</span>
+            </span>
+            <span class="form__trust-sep" aria-hidden="true">·</span>
+            <span class="form__trust-item">
+              <svg
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="8" cy="8" r="6" />
+                <path d="M8 5v3l2 1.5" />
+              </svg>
+              <span>RGPD</span>
+            </span>
+          </div>
+
+          <p class="form__legal">
+            <span class="lang-fr"
+              >Vos données sont transmises directement au Bureau de Coordination
+              de la mission. Aucun usage commercial. Conformité RGPD.</span
+            >
+            <span class="lang-en"
+              >Your data is transmitted directly to the Mission Coordination
+              Office. No commercial use. GDPR-compliant.</span
+            >
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--alt" id="faq">
+      <div class="container">
+        <div class="section__head section__head--center reveal">
+          <span class="eyebrow"
+            ><span class="lang-fr">Questions Fréquentes</span
+            ><span class="lang-en">Frequently Asked Questions</span></span
+          >
+          <h2 class="section__title">
+            <span class="lang-fr"
+              >L'essentiel pour <em>préparer votre venue</em>.</span
+            >
+            <span class="lang-en"
+              >The essentials to <em>prepare your visit</em>.</span
+            >
+          </h2>
+          <p class="section__lede">
+            <span class="lang-fr"
+              >Toute question complémentaire est traitée en direct par le Bureau
+              de Coordination — réponse circonstanciée sous 24 heures
+              ouvrées.</span
+            >
+            <span class="lang-en"
+              >Any further question is handled directly by the Coordination
+              Office — substantive reply within 24 business hours.</span
+            >
+          </p>
+        </div>
+
+        <div class="faq reveal">
+          <details class="faq__item">
+            <summary class="faq__q">
+              <span class="lang-fr"
+                >Ai-je besoin d'un visa pour me rendre à Philadelphie ?</span
+              >
+              <span class="lang-en"
+                >Do I need a visa to travel to Philadelphia?</span
+              >
+              <span class="faq__chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq__a">
+              <p>
+                <span class="lang-fr"
+                  >Pour les ressortissants ivoiriens, un visa B-1/B-2 est
+                  requis. Le Bureau de Coordination remet sur demande une lettre
+                  d'invitation officielle.</span
+                >
+                <span class="lang-en"
+                  >Ivorian nationals require a B-1/B-2 visa. The Coordination
+                  Office provides an official invitation letter on
+                  request.</span
+                >
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__q">
+              <span class="lang-fr"
+                >Quel est le dress code de la mission ?</span
+              >
+              <span class="lang-en">What is the mission's dress code?</span>
+              <span class="faq__chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq__a">
+              <p>
+                <span class="lang-fr"
+                  >Tenue professionnelle (dark suit, costume sombre) pour
+                  l'ensemble du programme officiel — Forum, Deal Room, table
+                  ronde diplomatique. Tenue de cocktail pour le gala du 12 juin.
+                  Tenue smart casual acceptée uniquement le 13 juin (visites
+                  industrielles et délégation Lincoln Financial Field).</span
+                >
+                <span class="lang-en"
+                  >Business professional (dark suit) throughout the official
+                  programme — Forum, Deal Room, diplomatic round table. Cocktail
+                  attire for the June 12 gala. Smart casual only accepted on
+                  June 13 (industrial visits and Lincoln Financial Field
+                  delegation).</span
+                >
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__q">
+              <span class="lang-fr"
+                >L'hébergement est-il inclus dans l'inscription ?</span
+              >
+              <span class="lang-en"
+                >Is accommodation included in the registration?</span
+              >
+              <span class="faq__chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq__a">
+              <p>
+                <span class="lang-fr"
+                  >Non. Conformément aux usages des missions économiques
+                  officielles, chaque participant prend en charge son
+                  hébergement.</span
+                >
+                <span class="lang-en"
+                  >No. In line with the standard practice for official economic
+                  missions, each participant covers their own
+                  accommodation.</span
+                >
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__q">
+              <span class="lang-fr"
+                >Le Forum sera-t-il en français ou en anglais ?</span
+              >
+              <span class="lang-en"
+                >Will the Forum be in French or English?</span
+              >
+              <span class="faq__chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq__a">
+              <p>
+                <span class="lang-fr"
+                  >Le Forum est intégralement bilingue. Interprétation
+                  simultanée FR ⇄ EN assurée par cabinet certifié pour les
+                  panels, allocutions ministérielles et tables rondes. Les
+                  rendez-vous B2B et le Deal Room s'organisent dans la langue
+                  des deux parties — anglais privilégié à défaut.</span
+                >
+                <span class="lang-en"
+                  >The Forum is fully bilingual. Simultaneous FR ⇄ EN
+                  interpretation is provided by a certified booth for panels,
+                  ministerial addresses and round tables. B2B meetings and the
+                  Deal Room are conducted in the language of both parties —
+                  English by default.</span
+                >
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__q">
+              <span class="lang-fr"
+                >Comment obtenir mon badge d'accréditation ?</span
+              >
+              <span class="lang-en"
+                >How do I obtain my accreditation badge?</span
+              >
+              <span class="faq__chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq__a">
+              <p>
+                <span class="lang-fr"
+                  >Le badge nominatif est remis en main propre au Bureau
+                  d'Accueil le 10 juin, sur présentation d'une pièce d'identité
+                  en cours de validité. Le badge donne accès à l'ensemble des
+                  espaces officiels (Forum, Deal Room, gala) et constitue le
+                  laissez-passer pour les transports navettes inter-sites.</span
+                >
+                <span class="lang-en"
+                  >The personal badge is handed over at the Welcome Desk on June
+                  10, upon presentation of a valid ID. The badge grants access
+                  to all official areas (Forum, Deal Room, gala) and serves as
+                  the pass for inter-site shuttle transportation.</span
+                >
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__q">
+              <span class="lang-fr"
+                >Le programme inclut-il un match de la Coupe du Monde ?</span
+              >
+              <span class="lang-en"
+                >Does the programme include a World Cup match?</span
+              >
+              <span class="faq__chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq__a">
+              <p>
+                <span class="lang-fr"
+                  >La mission se déroule en marge officielle de la Coupe du
+                  Monde FIFA 2026 (Lincoln Financial Field, Philadelphie). LE
+                  PROGRAMME N'INCLUT PAS L'ACCÈS AUX MATCHS.</span
+                >
+                <span class="lang-en"
+                  >The mission takes place officially on the sidelines of the
+                  FIFA 2026 World Cup (Lincoln Financial Field, Philadelphia).
+                  THE PROGRAMME DOES NOT INCLUDE ACCESS TO THE MATCHES.</span
+                >
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__q">
+              <span class="lang-fr"
+                >Puis-je inscrire plusieurs représentants de mon entreprise
+                ?</span
+              >
+              <span class="lang-en"
+                >Can I register several representatives from my company?</span
+              >
+              <span class="faq__chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq__a">
+              <p>
+                <span class="lang-fr"
+                  >Oui, dans la limite de 3 délégués par entité, validation du
+                  Bureau requise. Au-delà, échange direct avec le Bureau de
+                  Coordination pour étudier les modalités d'une délégation
+                  élargie. Les conditions exactes sont précisées dans le dossier
+                  transmis sur demande.</span
+                >
+                <span class="lang-en"
+                  >Yes, up to 3 delegates per entity, subject to validation by
+                  the Office. Beyond that, a direct exchange with the
+                  Coordination Office to discuss the terms of an enlarged
+                  delegation. Exact conditions are detailed in the dossier
+                  provided on request.</span
+                >
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section__head section__head--center reveal">
+          <span class="eyebrow"
+            ><span class="lang-fr">Bureau de Coordination</span
+            ><span class="lang-en">Coordination Office</span></span
+          >
+          <h2 class="section__title">
+            <span class="lang-fr"
+              >Bureau de Coordination · Mission BUSINESS IVOIRE USA 2026.</span
+            >
+            <span class="lang-en"
+              >Coordination Office · BUSINESS IVOIRE USA 2026 Mission.</span
+            >
+          </h2>
+        </div>
+
+        <div class="contact reveal-stagger">
+          <div class="contact__card">
+            <div class="contact__role">
+              <span class="lang-fr">Point de contact officiel</span
+              ><span class="lang-en">Official point of contact</span>
+            </div>
+            <p
+              class="contact__title"
+              style="margin-top: 12px; max-width: 520px"
+            >
+              <span class="lang-fr"
+                >Pour toute demande institutionnelle, partenariat ou
+                accréditation presse, le Bureau de Coordination répond sous 48
+                heures ouvrées.</span
+              ><span class="lang-en"
+                >For any institutional, partnership or press accreditation
+                request, the Coordination Office replies within 48 business
+                hours.</span
+              >
+            </p>
+            <a
+              href="mailto:naimf@protonmail.com?subject=BUSINESS%20IVOIRE%20USA%202026%20%E2%80%94%20Prise%20de%20contact"
+              class="btn btn--gold"
+              style="margin-top: 28px"
+            >
+              <span class="lang-fr">Nous écrire</span
+              ><span class="lang-en">Contact us</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIG CTA -->
+    <section class="cta-big">
+      <div class="container cta-big__inner reveal">
+        <span
+          class="eyebrow"
+          style="color: var(--gold-light); justify-content: center"
+          ><span class="lang-fr">Rejoignez la Mission</span
+          ><span class="lang-en">Join the Mission</span></span
+        >
+        <h2>
+          <span class="lang-fr"
+            >Trois jours qui peuvent <em>changer la trajectoire</em> de votre
+            entreprise en Afrique de l'Ouest.</span
+          >
+          <span class="lang-en"
+            >Three days that can <em>change your company's trajectory</em> in
+            West Africa.</span
+          >
+        </h2>
+        <p>
+          <span class="lang-fr"
+            >Inscriptions ouvertes jusqu'au 15 mai 2026. Au-delà, disponibilité
+            soumise à confirmation. Convention de partenariat individuelle
+            transmise sur demande sous 48h.</span
+          >
+          <span class="lang-en"
+            >Registrations open until May 15, 2026. Beyond that date,
+            availability subject to confirmation. Individual partnership
+            agreement provided upon request within 48 hours.</span
+          >
+        </p>
+        <div class="cta-big__buttons">
+          <a href="#inscription" class="btn btn--gold btn--lg"
+            ><span class="lang-fr">S'inscrire à la mission</span
+            ><span class="lang-en">Register for the mission</span></a
+          >
+          <a
+            href="mailto:naimf@protonmail.com?subject=BUSINESS%20IVOIRE%20USA%202026"
+            class="btn btn--ghost btn--lg"
+            ><span class="lang-fr">Nous écrire</span
+            ><span class="lang-en">Contact us</span></a
+          >
+        </div>
+        <a
+          href="mailto:naimf@protonmail.com?subject=BIUSA%202026%20%E2%80%94%20Demande%20Dossier%20de%20Presse&body=Merci%20de%20me%20transmettre%20le%20Dossier%20de%20Presse%20BIUSA%202026%20(brief%2C%20logos%20HD%2C%20visuels%20institutionnels)."
+          class="cta-big__presskit"
+          ><span class="lang-fr"
+            >Demander le Dossier de Presse · Logos HD · Brief
+            institutionnel</span
+          ><span class="lang-en"
+            >Request the Press Kit · HD logos · Institutional brief</span
+          ></a
+        >
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__col">
+            <img
+              src="assets/logo-horizontal.png"
+              alt="Business Ivoire USA 2026"
+              class="footer__logo"
+            />
+            <p class="footer__brand-text">
+              <span class="lang-fr"
+                >Mission économique et diplomatique officielle entre la
+                République de Côte d'Ivoire et le Commonwealth de
+                Pennsylvanie.</span
+              >
+              <span class="lang-en"
+                >Official economic and diplomatic mission between the Republic
+                of Côte d'Ivoire and the Commonwealth of Pennsylvania.</span
+              >
+            </p>
+          </div>
+
+          <div class="footer__col">
+            <div class="footer__col-title">
+              <span class="lang-fr">Mission</span
+              ><span class="lang-en">Mission</span>
+            </div>
+            <ul>
+              <li>
+                <a href="#mission"
+                  ><span class="lang-fr">À propos</span
+                  ><span class="lang-en">About</span></a
+                >
+              </li>
+              <li>
+                <a href="#programme"
+                  ><span class="lang-fr">Programme</span
+                  ><span class="lang-en">Programme</span></a
+                >
+              </li>
+              <li>
+                <a href="#hebergement"
+                  ><span class="lang-fr">Hébergement</span
+                  ><span class="lang-en">Lodging</span></a
+                >
+              </li>
+              <li>
+                <a href="#faq"
+                  ><span class="lang-fr">FAQ Participants</span
+                  ><span class="lang-en">FAQ Participants</span></a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <div class="footer__col-title">
+              <span class="lang-fr">Inscription · Presse</span
+              ><span class="lang-en">Registration · Press</span>
+            </div>
+            <ul>
+              <li>
+                <a href="#inscription"
+                  ><span class="lang-fr">S'inscrire</span
+                  ><span class="lang-en">Register</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="mailto:naimf@protonmail.com?subject=BIUSA%202026%20%E2%80%94%20Demande%20de%20dossier"
+                  ><span class="lang-fr">Demander le dossier</span
+                  ><span class="lang-en">Request the dossier</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="mailto:naimf@protonmail.com?subject=BIUSA%202026%20%E2%80%94%20Dossier%20de%20Presse&body=Merci%20de%20me%20transmettre%20le%20Dossier%20de%20Presse%20BIUSA%202026."
+                  ><span class="lang-fr">Dossier de presse · Logos HD</span
+                  ><span class="lang-en">Press kit · HD logos</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="mailto:naimf@protonmail.com?subject=BIUSA%202026%20%E2%80%94%20Accr%C3%A9ditation%20Presse"
+                  ><span class="lang-fr">Accréditation presse</span
+                  ><span class="lang-en">Press accreditation</span></a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <div class="footer__col-title">Contact</div>
+            <ul>
+              <li>
+                <span class="lang-fr">Bureau de Coordination</span
+                ><span class="lang-en">Coordination Office</span>
+              </li>
+              <li>
+                <span class="lang-fr">Réponse sous 48 h ouvrées</span
+                ><span class="lang-en">Reply within 48 business hours</span>
+              </li>
+              <li>
+                <a href="#inscription" class="footer__contact-cta">
+                  <span class="lang-fr">Nous écrire</span
+                  ><span class="lang-en">Contact us</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <div>
+            <strong>BUSINESS IVOIRE USA 2026</strong> ·
+            <span class="lang-fr"
+              >Mission Officielle · 10 — 13 Juin 2026 · Pennsylvanie</span
+            >
+            <span class="lang-en"
+              >Official Mission · June 10 — 13, 2026 · Pennsylvania</span
+            >
+          </div>
+          <div>
+            <span class="lang-fr"
+              >© 2026 — Tous droits réservés · Confidentiel</span
+            >
+            <span class="lang-en"
+              >© 2026 — All rights reserved · Confidential</span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- PROGRAMME DAY MODAL -->
+    <div
+      class="prog-modal-overlay"
+      id="progModalOverlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="progModalTitle"
+      aria-hidden="true"
+    >
+      <div class="prog-modal" id="progModal">
+        <header class="prog-modal__header">
+          <div class="prog-modal__header-left">
+            <span class="prog-modal__badge" id="progModalBadge"></span>
+            <span class="prog-modal__city" id="progModalCity"></span>
+            <h2 class="prog-modal__title" id="progModalTitle"></h2>
+          </div>
+          <button
+            class="prog-modal__close"
+            id="progModalClose"
+            aria-label="Fermer"
+          >
+            ×
+          </button>
+        </header>
+        <div class="prog-modal__body">
+          <div class="prog-modal__timeline" id="progModalTimeline"></div>
+          <div class="prog-modal__partners" id="progModalPartners"></div>
+          <button class="prog-modal__cta-btn" id="progModalCta">
+            <span class="lang-fr">S'inscrire à la Mission</span
+            ><span class="lang-en">Register for the Mission</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="enhancements.js"></script>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+      defer
+    ></script>
+    <script src="map.js" defer></script>
+  </body>
+</html>

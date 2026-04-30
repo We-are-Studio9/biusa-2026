@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <rect width="1000" height="1000" fill="#F4EEE1"/>
+  <defs>
+    <clipPath id="shieldClip">
+      <path d="M 330,272 L 670,272 L 670,420 L 500,549 L 330,420 Z"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#shieldClip)">
+    <!-- CI bandes verticales -->
+    <rect x="330" y="272" width="56" height="297" fill="#FF8200"/>
+    <rect x="386" y="272" width="56" height="297" fill="#FFFFFF"/>
+    <rect x="442" y="272" width="58" height="297" fill="#009A44"/>
+    <!-- USA stripes -->
+    <rect x="500" y="272.00" width="170" height="42.43" fill="#B22234"/>
+    <rect x="500" y="314.43" width="170" height="42.43" fill="#FFFFFF"/>
+    <rect x="500" y="356.86" width="170" height="42.43" fill="#B22234"/>
+    <rect x="500" y="399.29" width="170" height="42.43" fill="#FFFFFF"/>
+    <rect x="500" y="441.71" width="170" height="42.43" fill="#B22234"/>
+    <rect x="500" y="484.14" width="170" height="42.43" fill="#FFFFFF"/>
+    <rect x="500" y="526.57" width="170" height="42.43" fill="#B22234"/>
+    <!-- Canton bleu -->
+    <rect x="500" y="272" width="68" height="169.71" fill="#3C3B6E"/>
+    <!-- Etoiles -->
+    <polygon points="514.96,298.94 513.19,303.51 508.30,303.78 512.10,306.87 510.85,311.61 514.96,308.95 519.07,311.61 517.82,306.87 521.62,303.78 516.73,303.51" fill="#FFFFFF"/>
+    <polygon points="534.00,298.94 532.23,303.51 527.34,303.78 531.14,306.87 529.89,311.61 534.00,308.95 538.11,311.61 536.86,306.87 540.66,303.78 535.77,303.51" fill="#FFFFFF"/>
+    <polygon points="553.04,298.94 551.27,303.51 546.38,303.78 550.18,306.87 548.93,311.61 553.04,308.95 557.15,311.61 555.90,306.87 559.70,303.78 554.81,303.51" fill="#FFFFFF"/>
+    <polygon points="514.96,349.86 513.19,354.42 508.30,354.69 512.10,357.79 510.85,362.52 514.96,359.87 519.07,362.52 517.82,357.79 521.62,354.69 516.73,354.42" fill="#FFFFFF"/>
+    <polygon points="534.00,349.86 532.23,354.42 527.34,354.69 531.14,357.79 529.89,362.52 534.00,359.87 538.11,362.52 536.86,357.79 540.66,354.69 535.77,354.42" fill="#FFFFFF"/>
+    <polygon points="553.04,349.86 551.27,354.42 546.38,354.69 550.18,357.79 548.93,362.52 553.04,359.87 557.15,362.52 555.90,357.79 559.70,354.69 554.81,354.42" fill="#FFFFFF"/>
+    <polygon points="514.96,400.77 513.19,405.34 508.30,405.61 512.10,408.70 510.85,413.43 514.96,410.78 519.07,413.43 517.82,408.70 521.62,405.61 516.73,405.34" fill="#FFFFFF"/>
+    <polygon points="534.00,400.77 532.23,405.34 527.34,405.61 531.14,408.70 529.89,413.43 534.00,410.78 538.11,413.43 536.86,408.70 540.66,405.61 535.77,405.34" fill="#FFFFFF"/>
+    <polygon points="553.04,400.77 551.27,405.34 546.38,405.61 550.18,408.70 548.93,413.43 553.04,410.78 557.15,413.43 555.90,408.70 559.70,405.61 554.81,405.34" fill="#FFFFFF"/>
+  </g>
+  <!-- Contour or -->
+  <path d="M 330,272 L 670,272 L 670,420 L 500,549 L 330,420 Z" fill="none" stroke="#AB873F" stroke-width="4"/>
+  <!-- Ligne centrale -->
+  <line x1="500" y1="272" x2="500" y2="549" stroke="#AB873F" stroke-width="2"/>
+
+  <!-- Wordmark -->
+  <text x="500" y="684" text-anchor="middle"
+        font-family="Georgia, serif" font-weight="bold" font-size="58" fill="#161A2C">
+    BUSINESS  IVOIRE  USA
+  </text>
+  <line x1="300" y1="729" x2="445" y2="729" stroke="#AB873F" stroke-width="1"/>
+  <line x1="555" y1="729" x2="700" y2="729" stroke="#AB873F" stroke-width="1"/>
+  <text x="500" y="741" text-anchor="middle"
+        font-family="Georgia, serif" font-weight="bold" font-size="34" fill="#AB873F">
+    2026
+  </text>
+  <text x="500" y="799" text-anchor="middle"
+        font-family="Georgia, serif" font-style="italic" font-size="24" fill="#161A2C">
+    Beyond the Pitch  .  Philadelphia  .  June 10—13
+  </text>
+</svg>
